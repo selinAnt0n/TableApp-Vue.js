@@ -238,7 +238,7 @@ body {
   background: #05abca; }
 
 .body-color2 {
-  background: #1f90d8; }
+  background: #eee; }
 
 .hideFile {
   width: 150px;
@@ -433,8 +433,27 @@ h1 {
 .keyWord input {
   outline: none; }
 
+.strictApp-Button {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  width: 40px;
+  height: 40px;
+  background: #1f90d8;
+  border-radius: 100%;
+  color: #fff;
+  box-sizing: border-box;
+  border: 2px solid #000;
+  font-size: 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer; }
+
 #strictApp {
   position: absolute;
+  width: 185px;
   top: 70px;
   right: 0;
   padding: 20px;
@@ -738,10 +757,14 @@ h1 {
     margin-bottom: 50px; }
 
 #strictApp {
-  top: 5%;
-  right: 3%;
+  top: 10%;
+  right: -100%;
   position: fixed;
-  margin-bottom: 50px; }
+  margin-bottom: 50px;
+  transition: all .5s; }
+
+.ativeStrictOption {
+  right: 0% !important; }
 
 .globalColum {
   padding: 20px; }
@@ -832,8 +855,19 @@ h1 {
           cursor: pointer; }
     #createTask .task1 .allTempls li span,
     #createTask .task2 .allTempls li span {
-      width: 100%;
-      display: block; }
+      float: left;
+      width: 90%;
+      display: block;
+      height: 27px;
+      cursor: crosshair;
+      display: inline-flex;
+      flex-direction: row;
+      justify-content: left;
+      align-items: center; }
+    #createTask .task1 .allTempls li > div,
+    #createTask .task2 .allTempls li > div {
+      margin-top: 30px;
+      margin-bottom: 10px; }
 
 #workBoxesApp {
   width: 100%;
@@ -851,8 +885,12 @@ h1 {
     border: 2px solid #000;
     cursor: pointer; }
   #workBoxesApp .workbox {
-    margin-top: 20px;
-    overflow: hidden; }
+    margin-top: 10px;
+    overflow: hidden;
+    padding-top: 15px;
+    border-top: 4px solid #555; }
+    #workBoxesApp .workbox:first-of-type {
+      border-top: none; }
     #workBoxesApp .workbox > button {
       padding: 6px;
       border: none;

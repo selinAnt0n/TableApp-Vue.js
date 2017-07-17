@@ -5,7 +5,9 @@
 	<title>TableApp v.1</title>
 	<script src="jquery-3.1.1.min.js"></script>
 	<meta http-equiv="Cache-Control" content="no-cache" />
-	<script src="vue.js"></script>
+
+	<script src="js/vue.js"></script>
+
 	<script>
 		
 		$(".preloadHide").addClass(".preloadHide-active");
@@ -16,32 +18,26 @@
 
 	<script>
 	
-	// setInterval(function () {
-	// 	var arrColor = [
-	// 			"body-color1",
-	// 			"body-color2"
-	// 	];
-	// 	var min = 0;
-	// 	var max = 2;
-	// 	var rand = min - 0 + Math.random() * (max - min + 1);
+		setInterval(function () {
+			var arrColor = [
+					"body-color1",
+					"body-color2"
+			];
+			var min = 0;
+			var max = 2;
+			var rand = min - 0 + Math.random() * (max - min + 1);
 
- //    	rand = Math.round(rand);
+		 rand = Math.round(rand);
 
- //    	$("body").attr('class', '');
-	// 	$("body").addClass(arrColor[rand]);
+	 	 $("body").attr('class', '');
+			$("body").addClass(arrColor[rand]);
 
-	// },5000);
+		},5000);
 
-</script>
+	</script>
 
-	
-
-	
+		
 	<link rel="stylesheet" href="css/global.css">
-
-
-
-
 
 
 </head>
@@ -55,25 +51,32 @@
 		</div>
 	</div>
 
-
-
-
-
-
-	
-
 	<div class="holder-global">
 
 			<a href="http://prabu.ru/test4/" class="backStep">К предыдущему шагу</a>
 		
-			
-	
 
-			
+
+
+
+
+
+
 
 			<div id="createTask">
+
+				<div class="raido-holder">
+					<h4>С каким файлом взаимодествовать ?</h4>
+					
+					<input checked type="radio" name="radioTeam" id="uploadFileMet"  v-on:click="useFile1()">
+					<label for="uploadFileMet">Загруженый</label>
+
+					<input type="radio" name="radioTeam" id="convertFileMet"  v-on:click="useFile2()">
+					<label for="convertFileMet">Форматированый</label>
+
+				</div>
+
 				<div>
-				{{ arr }}
 					<br>
 					<br>
 					<br>
@@ -85,12 +88,9 @@
 						<button v-on:click="addCity()">Добавить новое слово</button>
 					</div>
 					<ul>
-						<li v-for="(city,index) in citys">{{index + 1}}. {{ city.name }} <button v-on:click="choseCity(city,index)"  class="icon_updir" v-bind:class="{icon_cancel1: city.flag}"></button></li>
+						<li v-for="(city,index) in citys">{{index + 1}}. {{ city.name }} <button v-on:click="choseCity(city,index)"  class="icon_plus" v-bind:class="{icon_cancel1: city.flag}"></button></li>
 					</ul>
 					<span>{{choseCitys}}</span>
-
-
-
 
 				</div>
 
@@ -101,26 +101,19 @@
 						<strong>Имя шаблона</strong>
 						<input type="text" v-model="nameTemp">
 
-
 						<strong>Слова шаблона</strong>
 						
 						<div class="tempWords" v-for="(newWord,index) in newWords">
 							<input type="text" v-model="newWord.text">	
 
 							<button class="icon_plus" v-on:click="addNewWord(newWord)"></button>
-							<button class="icon_cancel" v-on:click="removeNewWord(index)"></button>
+							<button class="icon_cancel" v-on:click="removeNewWord(index)" v-if="newWords.length > 1"></button>
+
 						</div>
-
-
-						
 
 						<button class="addTemp" v-on:click="addTempl()">Добавить шаблон</button>
 
-						
 					</div>
-
-
-
 
 					<div class="allTempls">
 
@@ -128,12 +121,15 @@
 							<li v-for="(temp,index) in templates" >
 								<span v-on:mouseover="hoverTampl(temp)" v-on:mouseout="hoverTamplOut(temp)">{{ temp.name }}</span>
 
-								<button v-on:click="choseTemp(temp,index)"  class="icon_updir" v-bind:class="{icon_cancel1: temp.flag}"></button>
+								<button v-on:click="choseTemp(temp,index)"  class="icon_plus" v-bind:class="{icon_cancel1: temp.flag}"></button>
 
-								<div v-if="temp.visible">
-									{{ temp.data }}
-								</div>
+								<transition name="fade">
+									<div v-if="temp.visible">
+									
+										{{ temp.data }}
 
+									</div>
+								</transition>
 
 							</li>
 							<span>{{ choseTemps }}</span>
@@ -142,33 +138,9 @@
 					</div>
 
 				</div>
-
-
-				<div class="raido-holder">
-					<h4>С каким файлом взаимодествовать ?</h4>
-					
-					<input checked type="radio" name="radioTeam" id="uploadFileMet"  v-on:click="useFile1()">
-					<label for="uploadFileMet">Загруженый</label>
-
-					<input type="radio" name="radioTeam" id="convertFileMet"  v-on:click="useFile2()">
-					<label for="convertFileMet">Форматированый</label>
-
-				</div>	
-
 			</div>
 
-
-
-
-
-
-
-
-
-
-
 			<div id="workBoxesApp">
-
 				{{words}}
 				<button class="icon_down_open_big createButton" v-on:click="createBoxes()"></button>
 				<transition name="fade">
@@ -216,7 +188,14 @@
 			</div>
 
 
-			<div id="strictApp">
+
+			<div class="strictApp-Button">
+				Strict
+			</div>
+
+
+
+			<div id="strictApp" class="da">
 
 				
 					<h4>Настройки Strict мода</h4>
@@ -229,6 +208,36 @@
 						<li v-for="(word,index) in words">{{index + 1}}. {{ word }} <button v-on:click="delWord(word,index)" class="icon_cancel"></button></li>
 					</ul>
 			</div>
+
+
+
+
+
+
+			<script>
+				
+			var button = document.querySelector('.strictApp-Button');
+
+			button.onclick = function () {
+
+
+
+				var d = document.getElementById("strictApp");
+
+				d.classList.toggle("ativeStrictOption");
+
+
+				
+
+			};
+
+
+			</script>
+
+
+
+
+
 
 
 
@@ -263,11 +272,11 @@
 								flag:false
 							},
 							{
-								name:"Бла",
+								name:"Санат",
 								flag:false
 							},
 							{
-								name:"Блабла",
+								name:"Лечен",
 								flag:false
 							}
 
@@ -280,7 +289,10 @@
 							{
 								name:"Шаблон 1",
 								data:[
-									""
+									"лечен",
+									"вар",
+									"тур"
+
 								],
 								flag:false,
 								visible:false
