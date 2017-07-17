@@ -1,0 +1,909 @@
+@charset "UTF-8";
+@font-face {
+  font-family: 'fontello';
+  src: url("../fonts/fontello.eot?49559349");
+  src: url("../fonts/fontello.eot?49559349#iefix") format("embedded-opentype"), url("../fonts/fontello.woff2?49559349") format("woff2"), url("../fonts/fontello.woff?49559349") format("woff"), url("../fonts/fontello.ttf?49559349") format("truetype"), url("../fonts/fontello.svg?49559349#fontello") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+/*
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: 'fontello';
+    src: url('../font/fontello.svg?49559349#fontello') format('svg');
+  }
+}
+*/
+[class^="icon_"]:before, [class*=" icon_"]:before {
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  /* opacity: .8; */
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+  /* Font smoothing. That was taken from TWBS */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */ }
+
+.icon-user:before {
+  content: '\e800'; }
+
+/* '' */
+.icon-search:before {
+  content: '\e801'; }
+
+/* '' */
+.icon-phone:before {
+  content: '\e802'; }
+
+/* '' */
+.icon-location:before {
+  content: '\e803'; }
+
+/* '' */
+.icon-lock:before {
+  content: '\e804'; }
+
+/* '' */
+.icon-logout:before {
+  content: '\e805'; }
+
+/* '' */
+.icon-right-open-big:before {
+  content: '\e806'; }
+
+/* '' */
+.icon-left-open-big:before {
+  content: '\e807'; }
+
+/* '' */
+.icon_down_open_big:before {
+  content: '\e808'; }
+
+/* '' */
+.icon-up-open-big:before {
+  content: '\e809'; }
+
+/* '' */
+.icon-up-open-mini:before {
+  content: '\e80a'; }
+
+/* '' */
+.icon-right-open-mini:before {
+  content: '\e80b'; }
+
+/* '' */
+.icon-left-open-mini:before {
+  content: '\e80c'; }
+
+/* '' */
+.icon-down-open-mini:before {
+  content: '\e80d'; }
+
+/* '' */
+.icon_plus:before {
+  content: '\e80e'; }
+
+/* '' */
+.icon-clock:before {
+  content: '\e80f'; }
+
+/* '' */
+.icon-share:before {
+  content: '\e810'; }
+
+/* '' */
+.icon-thumbs-up:before {
+  content: '\e811'; }
+
+/* '' */
+.icon-quote-right-alt:before {
+  content: '\e812'; }
+
+/* '' */
+.icon-quote-left-alt:before {
+  content: '\e813'; }
+
+/* '' */
+.icon-check:before {
+  content: '\e814'; }
+
+/* '' */
+.icon-comment:before {
+  content: '\e815'; }
+
+/* '' */
+.icon-eye:before {
+  content: '\e816'; }
+
+/* '' */
+.icon-basket:before {
+  content: '\e817'; }
+
+/* '' */
+.icon-down-dir:before {
+  content: '\e818'; }
+
+/* '' */
+.icon_updir:before {
+  content: '\e819'; }
+
+/* '' */
+.icon_edit:before {
+  content: '\e81a'; }
+
+/* '' */
+.icon-email:before {
+  content: '\e81b'; }
+
+/* '' */
+.icon_minus1:before {
+  content: '\e81c'; }
+
+/* '' */
+.icon_cancel:before {
+  content: '\e81d'; }
+
+/* '' */
+.icon_cancel1:before {
+  content: '\e81e'; }
+
+/* '' */
+.icon_gift:before {
+  content: '\e81f'; }
+
+/* '' */
+.icon-trash:before {
+  content: '\e83d'; }
+
+/* '' */
+.icon-twitter:before {
+  content: '\f099'; }
+
+/* '' */
+.icon-facebook:before {
+  content: '\f09a'; }
+
+/* '' */
+.icon-gplus:before {
+  content: '\f0d5'; }
+
+/* '' */
+.icon-angle-double-left:before {
+  content: '\f100'; }
+
+/* '' */
+.icon-angle-double-right:before {
+  content: '\f101'; }
+
+/* '' */
+.icon-angle-double-up:before {
+  content: '\f102'; }
+
+/* '' */
+.icon-angle-double-down:before {
+  content: '\f103'; }
+
+/* '' */
+.icon-info:before {
+  content: '\f129'; }
+
+/* '' */
+.icon-attention-alt:before {
+  content: '\f12a'; }
+
+/* '' */
+.icon-youtube-play:before {
+  content: '\f16a'; }
+
+/* '' */
+.icon-vkontakte:before {
+  content: '\f189'; }
+
+/* '' */
+.icon-odnoklassniki:before {
+  content: '\f263'; }
+
+/* '' */
+.icon-instagram:before {
+  content: '\f32d'; }
+
+/* '' */
+.icon-newspaper:before {
+  content: '\f4f0'; }
+
+/* '' */
+body {
+  transition: all 2.5s; }
+
+.body-color1 {
+  background: #05abca; }
+
+.body-color2 {
+  background: #1f90d8; }
+
+.hideFile {
+  width: 150px;
+  border: none;
+  border: 2px solid #555;
+  border-color: #1f90d8;
+  position: relative;
+  background: #1f90d8;
+  transition: all .3s;
+  border-radius: 4px;
+  border: 2px solid #000;
+  margin-bottom: 10px;
+  cursor: pointer; }
+
+.hideFile:click {
+  background: #000; }
+
+.hideFile span {
+  position: absolute;
+  top: 13px;
+  left: 22px;
+  color: #fff;
+  font-weight: bold; }
+
+.hideFile + input {
+  cursor: pointer; }
+
+.voteFile {
+  opacity: 0;
+  width: 150px;
+  padding: 11px;
+  cursor: pointer; }
+
+.result-box {
+  width: 100%;
+  overflow: hidden; }
+
+.row {
+  width: 100%;
+  margin-bottom: 20px;
+  display: block;
+  overflow: hidden;
+  border-bottom: 1px solid #000;
+  padding-bottom: 5px; }
+
+.col {
+  float: left;
+  color: #555;
+  text-align: center;
+  border-right: 1px solid rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+  padding: 0 5px; }
+
+.col:first-of-type {
+  color: #111; }
+
+.col:last-of-type {
+  border-right: none; }
+
+.counter {
+  width: 300px;
+  padding: 11px;
+  border: none;
+  border: 2px solid #555;
+  border-radius: 3px;
+  border-color: #1f90d8; }
+
+.go {
+  padding: 10px;
+  border: none;
+  background: #1f90d8;
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all .3s;
+  border: 2px solid #000; }
+
+.fileButton {
+  padding: 10px; }
+
+.buttonDown {
+  display: block;
+  padding: 10px 20px;
+  background: #1f90d8;
+  color: #fff;
+  max-width: 100px;
+  text-align: center;
+  text-decoration: none;
+  font-weight: bold;
+  float: left;
+  transition: all .3s;
+  border-radius: 4px;
+  border: 2px solid #000; }
+
+.button {
+  padding: 10px 20px;
+  background: #1f90d8;
+  color: #fff;
+  border: none;
+  font-weight: bold;
+  border-radius: 4px;
+  transition: all .3s;
+  border: 2px solid #000; }
+
+.rowHolder {
+  display: block;
+  font-weight: normal;
+  margin-bottom: 10px; }
+
+.rowHolder span {
+  font-weight: bold;
+  font-size: 18px; }
+
+.infoButton {
+  font-weight: bold;
+  margin-left: 30px; }
+
+.holder-global {
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative; }
+
+h1 {
+  width: 100%;
+  display: block;
+  text-align: center; }
+
+.loader {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #1f90d8;
+  width: 50px;
+  height: 50px;
+  border-radius: 100%; }
+
+#registNedd,
+#spaceNedd {
+  overflow: hidden; }
+
+#registNedd input,
+#registNedd label,
+#spaceNedd input,
+#spaceNedd label {
+  cursor: pointer; }
+
+#registNedd input,
+#spaceNedd input {
+  display: none; }
+
+#registNedd label,
+#spaceNedd label {
+  padding: 5px;
+  border: none;
+  background: #1f90d8;
+  display: inline-block;
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  transition: all .3s;
+  border: 2px solid #000; }
+
+#registNedd input:checked + label,
+#spaceNedd input:checked + label {
+  background: #000; }
+
+.nextStep {
+  float: right;
+  padding: 10px 10px;
+  background: #1f90d8;
+  color: #fff;
+  max-width: 150px;
+  text-align: center;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 4px;
+  transition: all .3s;
+  border: 2px solid #000; }
+
+.holderKeyWords {
+  width: 100%; }
+
+.keyWord {
+  max-width: 350px;
+  position: relative; }
+
+.keyWord input {
+  outline: none; }
+
+#strictApp {
+  position: absolute;
+  top: 70px;
+  right: 0;
+  padding: 20px;
+  border-radius: 10px;
+  border: 2px solid #000;
+  background: #fff; }
+
+#strictApp h4 {
+  text-align: center;
+  font-size: 20px; }
+
+#strictApp ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  margin-top: 20px; }
+
+#strictApp ul li {
+  margin-bottom: 10px;
+  width: 100%;
+  display: block;
+  text-align: left;
+  overflow-y: hidden;
+  background: #eee;
+  padding-left: 10px;
+  border-radius: 3px; }
+
+#strictApp ul li button {
+  float: right;
+  padding: 4px;
+  border: none;
+  border: 2px solid #555;
+  border-radius: 3px;
+  border-color: #1f90d8;
+  background: #1f90d8;
+  color: #fff;
+  border: 2px solid #000;
+  cursor: pointer; }
+
+#strictApp .newWord input {
+  padding: 3px;
+  border: none;
+  border: 1px solid #555;
+  border-radius: 3px;
+  margin-bottom: 15px;
+  padding: 7px;
+  border: none;
+  border: 2px solid #555;
+  border-radius: 3px;
+  border-color: #1f90d8; }
+
+#strictApp .newWord button {
+  padding: 6px;
+  border: none;
+  border: 2px solid #555;
+  border-radius: 3px;
+  border-color: #1f90d8;
+  background: #1f90d8;
+  color: #fff;
+  border: 2px solid #000;
+  cursor: pointer; }
+
+.keyWord input {
+  width: 65%;
+  padding: 3px;
+  border: none;
+  border: 1px solid #555;
+  border-radius: 3px;
+  margin-bottom: 15px;
+  padding: 7px;
+  border: none;
+  border: 2px solid #555;
+  border-radius: 3px;
+  border-color: #1f90d8; }
+
+.moreKeyWord {
+  padding: 5px 10px;
+  border: none;
+  font-size: 16px;
+  background: #1f90d8;
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+  margin-bottom: 20px;
+  transition: all .3s;
+  border: 2px solid #000; }
+
+.moreKeyWord:hover,
+.buttonDown:hover,
+.button:hover {
+  background: #1f90d8;
+  color: #fff; }
+
+.delWord {
+  padding: 6px;
+  border: none;
+  background: #1f90d8;
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+  float: right;
+  border-radius: 4px;
+  transition: all .3s;
+  border: 2px solid #000; }
+
+.delWord:hover {
+  background: #1f90d8; }
+
+.globalColum {
+  float: left;
+  width: 100%;
+  box-shadow: 0 0 0px 3px #000 inset;
+  padding: 10px 10px 5px;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  background: #fff; }
+
+#nextStepPage .holder-global {
+  min-width: 1500px;
+  position: relative; }
+
+#nextStepPage .go {
+  padding: 10px 30px;
+  width: 30%;
+  text-align: center;
+  transition: all .5s;
+  border-radius: 4px; }
+
+#nextStepPage .go:hover {
+  background: #1f90d8; }
+
+.backStep {
+  padding: 10px;
+  border: none;
+  background: #1f90d8;
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+  margin-bottom: 20px;
+  border-radius: 4px;
+  transition: all .3s;
+  border: 2px solid #000; }
+
+#preloader-holder {
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #000;
+  z-index: 1000;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center; }
+
+#preloader {
+  width: 50px;
+  height: 50px;
+  border: 10px solid #1f90d8;
+  position: relative;
+  border-radius: 100%; }
+
+.preloader-item {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #1f90d8;
+  height: 10px;
+  width: 10px;
+  border-radius: 100%;
+  animation-name: preload;
+  animation-duration: .8s;
+  animation-iteration-count: infinite; }
+
+.preloader-item2 {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: #1f90d8;
+  height: 10px;
+  width: 10px;
+  border-radius: 100%;
+  animation-name: preload2;
+  animation-duration: .8s;
+  animation-iteration-count: infinite; }
+
+.nextStep:hover,
+.backStep:hover {
+  background: #1f90d8; }
+
+.noSearch:after {
+  content: "Нет совпадений";
+  position: absolute;
+  top: 0;
+  left: 150%;
+  background: violet;
+  padding: 5px;
+  color: #fff;
+  width: 120px;
+  text-align: center; }
+
+@keyframes preload {
+  0% {
+    top: 10px;
+    left: 10px;
+    right: auto;
+    bottom: auto; }
+  25% {
+    top: 10px;
+    right: 10px;
+    left: auto;
+    bottom: auto; }
+  50% {
+    bottom: 10px;
+    right: 10px;
+    left: auto;
+    top: auto; }
+  75% {
+    bottom: 10px;
+    left: 10px;
+    right: auto;
+    top: auto; } }
+
+@keyframes preload2 {
+  0% {
+    top: auto;
+    left: auto;
+    right: 10px;
+    bottom: 10px; }
+  25% {
+    top: auto;
+    right: auto;
+    left: 10px;
+    bottom: 10px; }
+  50% {
+    bottom: auto;
+    right: auto;
+    left: 10px;
+    top: 10px; }
+  75% {
+    bottom: auto;
+    left: auto;
+    right: 10px;
+    top: 10px; } }
+
+#strict1,
+#strict2,
+#strict3 {
+  display: none; }
+
+#strict1 + label,
+#strict2 + label,
+#strict3 + label {
+  padding: 5px;
+  border: none;
+  background: #1f90d8;
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+  margin-bottom: 20px;
+  border-radius: 4px;
+  transition: all .3s;
+  border: 2px solid #000; }
+
+#strict1:checked + label,
+#strict2:checked + label,
+#strict3:checked + label {
+  background: #000; }
+
+.raido-holder input {
+  display: none; }
+
+.raido-holder label {
+  padding: 5px;
+  border: none;
+  background: #1f90d8;
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+  margin-bottom: 20px;
+  border-radius: 4px;
+  transition: all .3s;
+  border: 2px solid #000; }
+
+.raido-holder input:checked + label {
+  background: #000; }
+
+.holder-global {
+  padding-top: 30px; }
+  .holder-global .backStep {
+    margin-bottom: 50px;
+    display: inline-block; }
+  .holder-global .raido-holder {
+    margin-bottom: 50px; }
+
+#strictApp {
+  top: 5%;
+  right: 3%;
+  position: fixed;
+  margin-bottom: 50px; }
+
+.globalColum {
+  padding: 20px; }
+
+#createTask {
+  overflow: hidden; }
+  #createTask .task1,
+  #createTask .task2 {
+    float: left;
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid #000;
+    background: #fff;
+    margin-left: 30px;
+    margin-right: 30px;
+    width: 400px; }
+    #createTask .task1 h4,
+    #createTask .task2 h4 {
+      text-align: center;
+      font-size: 20px; }
+    #createTask .task1 .newCity input,
+    #createTask .task1 .addTemp-holder input,
+    #createTask .task2 .newCity input,
+    #createTask .task2 .addTemp-holder input {
+      padding: 3px;
+      border: none;
+      border: 1px solid #555;
+      border-radius: 3px;
+      margin-bottom: 15px;
+      padding: 7px;
+      border: none;
+      border: 2px solid #555;
+      border-radius: 3px;
+      border-color: #1f90d8; }
+    #createTask .task1 .newCity button,
+    #createTask .task1 .addTemp-holder button,
+    #createTask .task2 .newCity button,
+    #createTask .task2 .addTemp-holder button {
+      padding: 6px;
+      border: none;
+      border: 2px solid #555;
+      border-radius: 3px;
+      border-color: #1f90d8;
+      background: #1f90d8;
+      color: #fff;
+      border: 2px solid #000;
+      cursor: pointer; }
+    #createTask .task1 .newCity strong,
+    #createTask .task1 .addTemp-holder strong,
+    #createTask .task2 .newCity strong,
+    #createTask .task2 .addTemp-holder strong {
+      display: block; }
+    #createTask .task1 .newCity .addTemp,
+    #createTask .task1 .addTemp-holder .addTemp,
+    #createTask .task2 .newCity .addTemp,
+    #createTask .task2 .addTemp-holder .addTemp {
+      margin-top: 20px;
+      display: block;
+      float: right;
+      margin-bottom: 20px; }
+    #createTask .task1 ul,
+    #createTask .task2 ul {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      margin-top: 20px; }
+      #createTask .task1 ul li,
+      #createTask .task2 ul li {
+        margin-bottom: 10px;
+        width: 100%;
+        display: block;
+        text-align: left;
+        overflow-y: hidden;
+        background: #eee;
+        padding-left: 10px;
+        border-radius: 3px; }
+        #createTask .task1 ul li button,
+        #createTask .task2 ul li button {
+          float: right;
+          padding: 4px;
+          border: none;
+          border: 2px solid #555;
+          border-radius: 3px;
+          border-color: #1f90d8;
+          background: #1f90d8;
+          color: #fff;
+          border: 2px solid #000;
+          cursor: pointer; }
+    #createTask .task1 .allTempls li span,
+    #createTask .task2 .allTempls li span {
+      width: 100%;
+      display: block; }
+
+#workBoxesApp {
+  width: 100%;
+  margin-top: 50px;
+  padding-bottom: 200px; }
+  #workBoxesApp .createButton {
+    width: 100%;
+    height: 60px;
+    font-size: 50px;
+    color: #fff;
+    border-radius: 3px;
+    border-color: #1f90d8;
+    background: #1f90d8;
+    color: #fff;
+    border: 2px solid #000;
+    cursor: pointer; }
+  #workBoxesApp .workbox {
+    margin-top: 20px;
+    overflow: hidden; }
+    #workBoxesApp .workbox > button {
+      padding: 6px;
+      border: none;
+      border: 2px solid #555;
+      border-radius: 3px;
+      border-color: #1f90d8;
+      background: #1f90d8;
+      color: #fff;
+      border: 2px solid #000;
+      cursor: pointer; }
+    #workBoxesApp .workbox .allWords {
+      width: 100%;
+      max-width: 300px;
+      margin-top: 10px;
+      overflow: hidden; }
+      #workBoxesApp .workbox .allWords input {
+        float: left;
+        padding: 3px;
+        border: none;
+        border: 1px solid #555;
+        border-radius: 3px;
+        margin-bottom: 15px;
+        padding: 7px;
+        border: none;
+        border: 2px solid #555;
+        border-radius: 3px;
+        border-color: #1f90d8;
+        width: 80%; }
+      #workBoxesApp .workbox .allWords button {
+        float: right;
+        margin-top: 3px;
+        padding: 4px;
+        border: none;
+        border: 2px solid #555;
+        border-radius: 3px;
+        border-color: #1f90d8;
+        background: #1f90d8;
+        color: #fff;
+        border: 2px solid #000;
+        cursor: pointer; }
+    #workBoxesApp .workbox .activeStrict {
+      background: #000; }
+  #workBoxesApp .dangerMessege {
+    display: block;
+    width: 100%;
+    font-size: 20px;
+    margin: 10px 0;
+    text-align: center; }
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s; }
+
+.fade-enter, .fade-leave-to {
+  opacity: 0; }
