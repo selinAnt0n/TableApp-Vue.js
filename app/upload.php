@@ -61,7 +61,7 @@ if((!empty($_FILES["uploaded_file"])) && ($_FILES['uploaded_file']['error'] == 0
 
       setTimeout(function () { $("#preloader-holder").remove(); },1500);
 
-      setTimeout(function () { document.location.href = "http://prabu.ru/test3/"; }, 1500); 
+      setTimeout(function () { document.location.href = "http://prabu.ru/test4/"; }, 1500); 
     
    </script>
 </body>

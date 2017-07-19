@@ -14,8 +14,6 @@
 
 	</script>
 
-
-
 	<script>
 	
 		setInterval(function () {
@@ -55,16 +53,8 @@
 
 			<a href="http://prabu.ru/test4/" class="backStep">К предыдущему шагу</a>
 		
-
-
-
-
-
-
-
-
 			<div id="createTask">
-
+				
 				<div class="raido-holder">
 					<h4>С каким файлом взаимодествовать ?</h4>
 					
@@ -75,7 +65,6 @@
 					<label for="convertFileMet">Форматированый</label>
 
 				</div>
-
 				<div>
 					<br>
 					<br>
@@ -90,7 +79,7 @@
 					<ul>
 						<li v-for="(city,index) in citys">{{index + 1}}. {{ city.name }} <button v-on:click="choseCity(city,index)"  class="icon_plus" v-bind:class="{icon_cancel1: city.flag}"></button></li>
 					</ul>
-					<span>{{choseCitys}}</span>
+					<!-- <span>{{choseCitys}}</span> -->
 
 				</div>
 
@@ -132,27 +121,28 @@
 								</transition>
 
 							</li>
-							<span>{{ choseTemps }}</span>
+							<!-- <span>{{ choseTemps }}</span> -->
 						</ul>
 						
 					</div>
 
 				</div>
+
 			</div>
 
 			<div id="workBoxesApp">
-				{{words}}
+
+				<!-- {{words}} -->
+				
 				<button class="icon_down_open_big createButton" v-on:click="createBoxes()"></button>
+
 				<transition name="fade">
 					<span class="dangerMessege" v-if="messege">{{messege}}</span>
 				</transition>
 				
 				<div class="workbox"  v-for="(box,index) in words">
 
-					
-
 						<button v-on:click="useExceptions(box,index)" v-bind:class="{activeStrict: box.useExceptions}">Режим Исключение данных слова</button>
-
 
 						<transition name="fade">
 							<button v-on:click="useStrict(box,index)" v-if="box.strictShow" v-bind:class="{activeStrict: box.strictFlag}">Использовать Strict Моде</button>
@@ -162,8 +152,6 @@
 					
 					<button v-on:click="startSearch(box,index)">Поиск</button>
 
-					
-				
 					<div class="allWords" v-for="(word,index) in box.data">
 					
 						<input type="text" v-bind:value="word" disabled>
@@ -171,9 +159,7 @@
 
 					</div>
 						
-
 					<div class="resultTable">
-						
 						
 						<span v-if="box.result.length" v-show="!box.searchEmpty">
 							{{box.result}}
@@ -187,59 +173,37 @@
 				</div>
 			</div>
 
-
-
 			<div class="strictApp-Button">
 				Strict
 			</div>
 
-
-
 			<div id="strictApp" class="da">
-
 				
-					<h4>Настройки Strict мода</h4>
-					<div class="newWord">
-						<input type="text" v-model="text">
-						<button v-on:click="addWord">Добавить новое слово</button>
-					</div>
-					
-					<ul>
-						<li v-for="(word,index) in words">{{index + 1}}. {{ word }} <button v-on:click="delWord(word,index)" class="icon_cancel"></button></li>
-					</ul>
+				<h4>Настройки Strict мода</h4>
+				<div class="newWord">
+					<input type="text" v-model="text">
+					<button v-on:click="addWord">Добавить новое слово</button>
+				</div>
+				
+				<ul>
+					<li v-for="(word,index) in words">{{index + 1}}. {{ word }} <button v-on:click="delWord(word,index)" class="icon_cancel"></button></li>
+				</ul>
+
 			</div>
-
-
-
-
-
 
 			<script>
 				
-			var button = document.querySelector('.strictApp-Button');
+				var button = document.querySelector('.strictApp-Button');
 
-			button.onclick = function () {
+				button.onclick = function () {
 
+					var d = document.getElementById("strictApp");
 
+					d.classList.toggle("ativeStrictOption");
 
-				var d = document.getElementById("strictApp");
-
-				d.classList.toggle("ativeStrictOption");
-
-
-				
-
-			};
-
+				};
 
 			</script>
-
-
-
-
-
-
-
 
 			<script>
 
@@ -675,7 +639,14 @@
 
 								// 	this.words.push(dataItem);
 
-								// }		
+								// }
+
+
+
+
+							
+
+
 						},
 						useStrict: function (item,index) {
 							
@@ -960,3 +931,32 @@
 
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- They are quite similary 
+
+
+Oh ,right , beonce, OK
+
+
+
+
+
+5) What do you think (about) this song John ?
+I dont know
+Its very different 
+
+
+
+
+-->
