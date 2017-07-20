@@ -103,7 +103,6 @@
 						<button class="addTemp" v-on:click="addTempl()">Добавить шаблон</button>
 
 					</div>
-
 					<div class="allTempls">
 
 						<ul>
@@ -149,7 +148,6 @@
 						</transition>
 					<br>
 					<br>
-					
 					<button v-on:click="startSearch(box,index)">Поиск</button>
 
 					<div class="allWords" v-for="(word,index) in box.data">
@@ -158,7 +156,7 @@
 						<button class="icon_cancel1" v-on:click="deleteWord(box,word,index)"></button>
 
 					</div>
-						
+					
 					<div class="resultTable">
 						
 						<span v-if="box.result.length" v-show="!box.searchEmpty">
@@ -609,44 +607,6 @@
 
 							}
 
-							// for (var i =0;i < arr.length;i++){
-							// 	for (var j =0;j < this.city.length;j++) {
-							// 		result.push(arr[i].data ,this.city[j] );
-							// 	}
-							// }
-
-
-								// for (var k =0;k < result.length;k=k+2) {
-
-								// 	let item = result[k];
-
-								// 	let it = result[k].concat(result[k+1]);
-
-
-
-								// 	console.log(it);
-
-								// 	it.strict = false;
-									
-								// 	let dataItem =  {};
-
-								// 	dataItem.data = it;
-								// 	dataItem.result = [];
-								// 	dataItem.strictFlag = false;
-								// 	dataItem.searchEmpty = false;
-								// 	dataItem.strictShow = true;
-								// 	dataItem.useExceptions = false;
-
-								// 	this.words.push(dataItem);
-
-								// }
-
-
-
-
-							
-
-
 						},
 						useStrict: function (item,index) {
 							
@@ -663,9 +623,6 @@
 							var globalArr = [];
 
 							var allWord = item.data;
-
-
-							console.log(allWord);
 
 							if (item.strictFlag) {					
 
@@ -690,12 +647,9 @@
 									for (var j = 0;j < globalCount;j++) {
 
 										var searStr = allWord[j];										
-									
-
 										searStr = searStr.toLowerCase();
 
-					
-										
+				
 										if ( str.indexOf(searStr,0) >= 0) {
 
 											innerCount++;
@@ -800,12 +754,6 @@
 								}
 							} else {
 									
-
-								
-
-
-								
-
 								globalCount = allWord.length;
 
 								for (var i = 0;i < arr.length;i++) {
@@ -854,7 +802,6 @@
 											item.searchEmpty = true;
 										}
 									}
-
 								}
 							}
 						},
@@ -917,8 +864,6 @@
 
 	</div>
 
-	
-
 	<script src="js/nextStep.js"></script>	
 
 
@@ -941,22 +886,3 @@
 
 
 
-
-
-<!-- They are quite similary 
-
-
-Oh ,right , beonce, OK
-
-
-
-
-
-5) What do you think (about) this song John ?
-I dont know
-Its very different 
-
-
-
-
--->
