@@ -16,21 +16,21 @@
 
 	<script>
 	
-		setInterval(function () {
-			var arrColor = [
-					"body-color1",
-					"body-color2"
-			];
-			var min = 0;
-			var max = 2;
-			var rand = min - 0 + Math.random() * (max - min + 1);
+		// setInterval(function () {
+		// 	var arrColor = [
+		// 			"body-color1",
+		// 			"body-color2"
+		// 	];
+		// 	var min = 0;
+		// 	var max = 2;
+		// 	var rand = min - 0 + Math.random() * (max - min + 1);
 
-		 rand = Math.round(rand);
+		//  rand = Math.round(rand);
 
-	 	 $("body").attr('class', '');
-			$("body").addClass(arrColor[rand]);
+	 // 	 $("body").attr('class', '');
+		// 	$("body").addClass(arrColor[rand]);
 
-		},5000);
+		// },5000);
 
 	</script>
 
@@ -479,9 +479,6 @@
 					}
 				});
 
-
-
-
 				var workBox = new Vue({
 					el:"#workBoxesApp",
 					data: {
@@ -542,8 +539,7 @@
 									this.words.push(dataItem);
 
 								}
-
-									
+		
 							} else if (this.city.length && !arr.length) {
 								this.messege = "";
 
