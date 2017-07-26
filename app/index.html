@@ -203,6 +203,9 @@
  
             
                 $('.ajax-respond').html( "Успешно загружен" );
+                setTimeout(function () {
+                	 $('.ajax-respond').html( "" );
+                },3000);
             }
             else{
                 console.log('ОШИБКИ ОТВЕТА сервера: ' + respond.error );
