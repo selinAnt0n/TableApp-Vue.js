@@ -41,13 +41,38 @@
 
 
 	<div class="holder-global">
-		<form enctype="multipart/form-data" action="upload.php" method="post">
+		<!-- <form enctype="multipart/form-data" action="upload.php" method="post">
 	    <input type="hidden" name="MAX_FILE_SIZE"  value="10000000" />
 
 	   
 	    <div class="hideFile"><span>Выбрать фаил</span><input name="uploaded_file" type="file" class="voteFile"/></div>
 	    <input type="submit" value="Отправить" class="button"/>
-		</form>
+		</form> -->
+
+
+
+
+		<div class="uploadFile">
+			<span>Выбрать Фаил <input type="file" multiple="multiple" accept=".xml,/*"></span>
+			
+
+			<a href="#" class="submit button hide">Загрузить файлы</a>
+
+			<br>
+			<div class="ajax-respond"></div>
+			<div class="error"></div>
+
+		</div>
+
+			
+
+
+
+
+
+
+
+
 		<br>
 		<br>
 			<h2>Правила !!!</h2>
@@ -107,6 +132,104 @@
 	
 	
 </body>
+
+
+
+
+	<script>
+		
+
+		var files;
+ 
+		// Вешаем функцию на событие
+		// Получим данные файлов и добавим их в переменную
+		 
+		$('input[type=file]').change(function(){
+
+			let name = this.files[0].name.split(".");
+
+			if (name[1] === "xml" ) {
+
+				files = this.files;
+				$('.error').text("");
+				$('.uploadFile > a').removeClass('hide');
+
+			} else {
+				$('.uploadFile > a').addClass('hide');
+
+				$('.error').text("Неверный тип файла !");
+		
+
+			}
+
+		});
+
+
+
+
+		$('.submit.button').click(function( event ){
+    	event.stopPropagation(); // Остановка происходящего
+    	event.preventDefault();  // Полная остановка происходящего
+ 
+    	// Создадим данные формы и добавим в них данные файлов из files
+ 
+    	var data = new FormData();
+    	$.each( files, function( key, value ){
+        	data.append( key, value );
+    	});
+ 
+    	// Отправляем запрос
+
+
+
+   
+ 
+    $.ajax({
+        url: './submit.php?uploadfiles',
+        type: 'POST',
+        data: data,
+        cache: false,
+        dataType: 'json',
+        processData: false, // Не обрабатываем файлы (Don't process the files)
+        contentType: false, // Так jQuery скажет серверу что это строковой запрос
+        success: function( respond, textStatus, jqXHR ){
+ 
+            // Если все ОК
+ 
+            if( typeof respond.error === 'undefined' ){
+                // Файлы успешно загружены, делаем что нибудь здесь
+ 
+                // выведем пути к загруженным файлам в блок '.ajax-respond'
+ 
+            
+                $('.ajax-respond').html( "Успешно загружен" );
+            }
+            else{
+                console.log('ОШИБКИ ОТВЕТА сервера: ' + respond.error );
+            }
+        },
+        error: function( jqXHR, textStatus, errorThrown ){
+            console.log('ОШИБКИ AJAX запроса: ' + textStatus );
+        }
+    });
+ 
+});
+
+
+
+	</script>
+
+
+
+
+
+
+
+
+
+
+
+
 
 	<script>
 
@@ -567,6 +690,7 @@
 				  url: "some.php",
 				  data: "string=" + serialized,
 				  response:"text",
+				  cache:false,
 				  success: function(msg){
 				  	
 				  }
