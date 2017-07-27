@@ -7,7 +7,6 @@
 	<link rel="stylesheet" href="css/global.css">
 	<meta http-equiv="Cache-Control" content="no-cache" />
 
-
 	<link rel="icon" href="favicon.ico" type="image/ico">
 </head>
 <body> 
@@ -151,6 +150,10 @@
 			if (name[1] === "xml" ) {
 
 				files = this.files;
+
+
+				console.log(files);
+
 				$('.error').text("");
 				$('.uploadFile > a').removeClass('hide');
 
@@ -163,7 +166,6 @@
 			}
 
 		});
-
 
 
 
@@ -722,6 +724,10 @@
 	<script>
 
 		setTimeout(function () { $("#preloader-holder").remove(); },1200);
+
+
+
+		
 		
 	</script>
 
