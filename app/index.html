@@ -40,40 +40,22 @@
 
 
 	<div class="holder-global">
-		<!-- <form enctype="multipart/form-data" action="upload.php" method="post">
-	    <input type="hidden" name="MAX_FILE_SIZE"  value="10000000" />
-
-	   
-	    <div class="hideFile"><span>Выбрать фаил</span><input name="uploaded_file" type="file" class="voteFile"/></div>
-	    <input type="submit" value="Отправить" class="button"/>
-		</form> -->
-
-
-
 
 		<div class="uploadFile">
 			<span>Выбрать Фаил <input type="file" multiple="multiple" accept=".xml,/*"></span>
-			
-
 			<a href="#" class="submit button hide">Загрузить файлы</a>
-
 			<br>
 			<div class="ajax-respond"></div>
 			<div class="error"></div>
-
 		</div>
 
 			
-
-
-
-
-
-
-
-
+			
 		<br>
 		<br>
+
+
+
 			<h2>Правила !!!</h2>
 			<p>1. Вводить xml\2003 файлы.</p>
 			<p>2. В xml таблице <strong>ТЕКСТ</strong> может содержаться только в первом столбце.</p>
@@ -160,7 +142,7 @@
 			} else {
 				$('.uploadFile > a').addClass('hide');
 
-				$('.error').text("Неверный тип файла !");
+				$('.error').text("Неверный тип файла !")
 		
 
 			}
