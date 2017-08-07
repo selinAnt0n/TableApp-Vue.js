@@ -1017,8 +1017,8 @@ h1 {
   border-right: 2px solid #000; }
 
 .result li span:first-of-type {
-  border-left: 4px solid blue;
-  border-right: 4px solid blue; }
+  border-left: 4px solid #1f90d8;
+  border-right: 2px solid #000; }
 
 .info span {
   display: block;
