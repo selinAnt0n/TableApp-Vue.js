@@ -4,7 +4,10 @@
 	<meta charset="UTF-8">
 	<title>TableApp v.1</title>
 	<script src="jquery-3.1.1.min.js"></script>
+	<script src="js/vue.js"></script>
+
 	<link rel="stylesheet" href="css/global.css">
+
 	<meta http-equiv="Cache-Control" content="no-cache" />
 
 	<link rel="icon" href="favicon.ico" type="image/ico">
@@ -14,8 +17,8 @@
 	
 	setInterval(function () {
 		var arrColor = [
-				"body-color1",
-				"body-color2"
+			"body-color1",
+			"body-color2"
 
 		];
 		var min = 0;
@@ -38,679 +41,68 @@
 		</div>
 	</div>
 
+	<div id="uploadFile">
 
-	<div class="holder-global">
+		<span>
+			<input type="file"  @change="changeFile">
+			<button>Выбрать Фаил</button>
+		</span>
 
-		<div class="uploadFile">
-			<span>Выбрать Фаил <input type="file" multiple="multiple" accept=".xml,/*"></span>
-			<a href="#" class="submit button hide">Загрузить файлы</a>
-			<br>
-			<div class="ajax-respond"></div>
-			<div class="error"></div>
+		<div>
+			{{ resultAjax }}
 		</div>
-
-			
-			
-		<br>
-		<br>
-
-
-
-			<h2>Правила !!!</h2>
-			<p>1. Вводить xml\2003 файлы.</p>
-			<p>2. В xml таблице <strong>ТЕКСТ</strong> может содержаться только в первом столбце.</p>
-			<p>3. В первом столбце (названиях) <strong>НЕ</strong> должно присутствовать символа "&" .</p>
 		
-			<div id="registNedd">
-				<input type="checkbox" id="registNeddButton">
-				<label for="registNeddButton"  onselectstart="return false"> Учитывать регистр</label>
-			</div>
-			
-			<div id="spaceNedd">
-				<input type="checkbox" id="spaceNeddButton">
-				<label for="spaceNeddButton"  onselectstart="return false"> Учитывать пробелы</label>
-			</div>
-			
-		<br>
-		<br>
-		<a class="go" >Конвертировать</a>
-		<input type="text" class="counter" placeholder="Введите количество столбцов">
-		<span class="infoButton">Выходные данные напрямую зависят от количества столбцов !!!</span>
-		<br>
-		<br>
-		<div class="customHolder">
-			<strong class="rowHolder">
-				Было количество строк: 
-				<span class="countRowOld">0</span>
-			</strong>
+	</div>
 
-			<strong class="rowHolder">
-				Стало количество строк: 
-				<span class="countRowNew">0</span>
-			</strong>
-			<strong class="rowHolder">
-				Время выполнения: 
-				<span class="timeUp">0</span>
-			</strong>
-			<strong class="rowHolder">
-				Сократил на:  
-				<span class="procent">0</span>
-			</strong>
+	<div id="convertApp">
+		
+		<button v-on:click="registNeed = !registNeed" v-bind:class="{active: registNeed}">Учитывать регистр</button>
+		<button v-on:click="spaceNeed = !spaceNeed" v-bind:class="{active: spaceNeed}">Учитывать пробелы</button>
+		<button v-on:click="startConvert()" class="Start">Конвертировать</button>
+
+		<br>
+		<br>
+		<div class="info">
+			<span>Было строк: {{ countRowOld }}</span>
+			<span>Стало строк: {{ result.length }}</span>
+			<span>Сокращение на: {{ procentNew }}%</span>
+			<span>Время работы: {{ timeWork }}</span>
 		</div>
+		<br>
+		<div> 
 			
-		<br>
-		<a class="buttonDown" href="convertBox/convertVersion.xml" download>Выгрузить</a>
-		<a href="http://prabu.ru/test4/nextStep.html" class="nextStep">Следующий Шаг</a>
+			<a class="buttonDown" href="convertBox/convertVersion.xml" download>Выгрузить</a>
+			<button v-on:click="createFile()">Выгрузить</button>
 
-		<h1>Выходные данные:</h1>
-		<br>
-		<br>
+			<a href="http://prabu.ru/test4/nextStep.html" class="nextStep">Следущий Шаг</a>
 
+		</div>
+		
+		<br>
+		<br>
+		
+		<div>
+			
+			<ol class="result">
+  				<transition-group name="list" tag="p">
+					<li v-for=" elem in result"  v-bind:key="elem">
+
+						<span v-for="item in elem"  :style="{ width: widthSpan + '%' }"> {{item}} </span>
+
+					</li>
+				</transition-group>
+			</ol>
+		</div>
 	</div>
-	
-	<div class="result-box">
-	</div>
-	
 	
 </body>
 
-
-
-
-	<script>
-		
-
-		var files;
- 
-		// Вешаем функцию на событие
-		// Получим данные файлов и добавим их в переменную
-		 
-		$('input[type=file]').change(function(){
-
-			let name = this.files[0].name.split(".");
-
-			if (name[1] === "xml" ) {
-
-				files = this.files;
-
-
-				console.log(files);
-
-				$('.error').text("");
-				$('.uploadFile > a').removeClass('hide');
-
-			} else {
-				$('.uploadFile > a').addClass('hide');
-
-				$('.error').text("Неверный тип файла !")
-		
-
-			}
-
-		});
-
-
-
-		$('.submit.button').click(function( event ){
-    	event.stopPropagation(); // Остановка происходящего
-    	event.preventDefault();  // Полная остановка происходящего
- 
-    	// Создадим данные формы и добавим в них данные файлов из files
- 
-    	var data = new FormData();
-    	$.each( files, function( key, value ){
-        	data.append( key, value );
-    	});
- 
-    	// Отправляем запрос
-
-
-
-   
- 
-    $.ajax({
-        url: './submit.php?uploadfiles',
-        type: 'POST',
-        data: data,
-        cache: false,
-        dataType: 'json',
-        processData: false, // Не обрабатываем файлы (Don't process the files)
-        contentType: false, // Так jQuery скажет серверу что это строковой запрос
-        success: function( respond, textStatus, jqXHR ){
- 
-            // Если все ОК
- 
-            if( typeof respond.error === 'undefined' ){
-                // Файлы успешно загружены, делаем что нибудь здесь
- 
-                // выведем пути к загруженным файлам в блок '.ajax-respond'
- 
-            
-                $('.ajax-respond').html( "Успешно загружен" );
-                setTimeout(function () {
-                	 $('.ajax-respond').html( "" );
-                },3000);
-            }
-            else{
-                console.log('ОШИБКИ ОТВЕТА сервера: ' + respond.error );
-            }
-        },
-        error: function( jqXHR, textStatus, errorThrown ){
-            console.log('ОШИБКИ AJAX запроса: ' + textStatus );
-        }
-    });
- 
-});
-
-
-
-	</script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-	<script>
-
-		var buttonStart = $('.go');
-
-		$(buttonStart).mousedown(function() {
-			$('.infoButton').text("ВЫПОЛНЯЕТСЯ...");
-		});
-		$(buttonStart).click(function () {
-
-			var registNeed = $("#registNedd input").is(':checked');
-			var spaceNeed = $("#spaceNedd input").is(':checked');
-
-			$('.result-box .row').remove();
-
-			function getXMLDocument(url)  {  //Получение одномерного XML
-
-			    var xml;  
-
-			    if(window.XMLHttpRequest)  
-			    {  
-			        xml = new window.XMLHttpRequest();  
-			        xml.open("GET", 'upload/workSpace.xml', false);  
-			        xml.send("");  
-			        return xml.responseXML;  
-			       
-			    }  
-			    else  
-			        
-			        if(window.ActiveXObject)  
-			        {  
-			            xml=new ActiveXObject("Microsoft.XMLDOM");  
-			            xml.async=false;  
-			            xml.load(url);   
-			            return xml;   
-			        }  
-			        else  
-			        {  
-			            alert("Загрузка XML не поддерживается браузером");  
-			            return null;  
-			        }  
-			    }
-
-			    var xml = getXMLDocument();
-
-		        var allRow = xml.getElementsByTagName('Data');
-
-		        var obj = [];
-
-		        for (var c = 0;c < allRow.length;c++) {
-		        	
-		            var test = Number.isNaN(+$(allRow[c]).text());
-
-		            if (test) {
-
-		                obj.push($(allRow[c]).text());
-		            } else {
-		            	
-		                obj.push(+$(allRow[c]).text());
-		            }
-		        }
-
-			var arr = obj;
-
-			var allRowLength = xml.getElementsByTagName('Row');
-			
-			function parseArr(arrXml,count) {	//парсинг XML
-
-				var globalArr = [];
-
-				var row = arrXml.length/count;
-
-				for (var i = 0;i < row;i++) {
-					var str = "";
-					
-					globalArr[i] = new Array();
-					for (var j = 0;j < count;j++) {
-				
-						globalArr[i][j] = arrXml[(i*count)+j];
-					}
-				}
-
-				searchName(globalArr);		
-			}
-
-
-			function searchName (globalArr) {	//Поис совпадений
-
-				var jobArr = globalArr.sort();
-
-				for (var i = 0;i <= jobArr.length;i++) {
-
-					var counter = 0;
-					var end = [];
-
-					for (var j =i+1;j <= jobArr.length;j++) {
-
-						if (jobArr[j] != undefined && jobArr[i] != undefined) {
-
-							if (registNeed && spaceNeed) {
-
-								var strSearch1 = (jobArr[i][0]+"").replace(/ /ig, "").toLowerCase();
-								var strSearch2 = (jobArr[j][0]+"").replace(/ /ig, "").toLowerCase();
-
-								if (strSearch1 == strSearch2) {
-								
-									if (counter == 0) {
-
-										end.push(jobArr[j]);
-										end.push(jobArr[i]);
-
-										jobArr[j] = undefined;
-										counter++;
-
-									} else {
-
-										end.push(jobArr[j]);
-										jobArr[j] = undefined;
-
-									}
-
-								} else {
-
-									for (var s = 0;s <= jobArr.length;s++) {
-										
-										if (jobArr[i] != undefined && jobArr[s] != undefined) {
-
-											var strSearch3 = (jobArr[s][0]+"").replace(/ /ig, "");
-
-											if (strSearch1 == strSearch3) {
-												
-											} else {
-												
-												if (end.length >= 1) {
-												
-												} else {
-
-													end.push(jobArr[i]);
-													jobArr[i] = undefined;
-												}
-											}
-										} else {
-										}	
-									}
-								}
-
-							} else if (registNeed) {
-
-								if ((jobArr[i][0]+"").toLowerCase() == (jobArr[j][0] + "").toLowerCase()) {
-								
-									if (counter == 0) {
-
-										end.push(jobArr[j]);
-										end.push(jobArr[i]);
-
-										jobArr[j] = undefined;
-										counter++;
-
-									} else {
-
-										end.push(jobArr[j]);
-										jobArr[j] = undefined;
-
-									}
-
-								} else {
-
-									for (var s = 0;s <= jobArr.length;s++) {
-										
-										if (jobArr[i] != undefined && jobArr[s] != undefined) {
-
-											if ((jobArr[i][0]+"").toLowerCase() == (jobArr[s][0]+"").toLowerCase()) {
-												
-											} else {
-												
-												if (end.length >= 1) {
-												
-												} else {
-
-													end.push(jobArr[i]);
-													jobArr[i] = undefined;
-
-												}
-
-											}
-											
-										} else {
-										}	
-									}
-								}
-
-							} else if (spaceNeed) {
-
-								var strSearch1 = (jobArr[i][0]+"").replace(/ /ig, "");
-								var strSearch2 = (jobArr[j][0]+"").replace(/ /ig, "");
-
-								if (strSearch1 == strSearch2) {
-								
-									if (counter == 0) {
-
-										end.push(jobArr[j]);
-										end.push(jobArr[i]);
-
-										jobArr[j] = undefined;
-										counter++;
-
-									} else {
-
-										end.push(jobArr[j]);
-										jobArr[j] = undefined;
-
-									}
-
-								} else {
-
-									for (var s = 0;s <= jobArr.length;s++) {
-										
-										if (jobArr[i] != undefined && jobArr[s] != undefined) {
-
-											var strSearch3 = (jobArr[s][0]+"").replace(/ /ig, "");
-
-											if (strSearch1 == strSearch3) {
-												
-											} else {
-												
-												if (end.length >= 1) {
-												
-												} else {
-
-													end.push(jobArr[i]);
-													jobArr[i] = undefined;
-												}
-											}
-										} else {
-										}	
-									}
-								}
-
-							} else {
-
-								if (jobArr[i][0] == jobArr[j][0]) {
-								
-									if (counter == 0) {
-
-										end.push(jobArr[j]);
-										end.push(jobArr[i]);
-
-										jobArr[j] = undefined;
-										counter++;
-
-									} else {
-
-										end.push(jobArr[j]);
-										jobArr[j] = undefined;
-
-									}
-
-								} else {
-
-									for (var s = 0;s <= jobArr.length;s++) {
-										
-										if (jobArr[i] != undefined && jobArr[s] != undefined) {
-
-											if (jobArr[i][0] == jobArr[s][0]) {
-												
-											} else {
-												
-												if (end.length >= 1) {
-												
-												} else {
-
-													end.push(jobArr[i]);
-													jobArr[i] = undefined;
-
-												}
-
-											}
-											
-										} else {
-										}	
-									}
-								}
-							}
-						}
-					}
-
-					mathSTR(end);
-
-					if (jobArr[i] != undefined) { // Добавление последнего единичного символа
-						end = [];
-						if (jobArr.length == i+1) {
-							end.push(jobArr[i]);
-							jobArr[i] = undefined;
-							mathSTR(end);
-						}	
-					}
-				}
-			}
-
-			function mathSTR (arr) {	//Расчет
-
-				var endArr = [];
-
-				for (var k = 0;k < count;k++) {
-					endArr[k] = 0;
-				}
-				
-				if (arr.length <= 0) {
-
-				} else {
-					endArr.unshift(arr[0][0]);
-					var str = '';
-					for (var i = 0;i < arr.length;i++) {
-						for (var j = 1; j < arr[i].length;j++) {
-
-							if (typeof arr[i][j] == typeof str){
-						
-								if ( !isNaN(parseInt(arr[i][j])) ) {
-
-									str = arr[i][j];
-									str = str.replace(/\s+/g,'');
-									str = str.replace(/,/g,'.');
-									arr[i][j] = parseFloat(str)/100;
-
-								}
-							}
-
-							endArr[j] += arr[i][j];
-						}
-					}
-					endArr.pop();
-					
-					viewInfo(endArr);
-				}
-			}
-			function viewInfo (arr) {   //Отображение расчета
-			
-				var holderEndInfo = $('.result-box')[0];
-				var row = document.createElement('span');
-				$(row).addClass("row");
-			
-				for (var x = 0; x < count;x++) {
-					var col = document.createElement('span');
-					var widthCol = 98/count;
-					$(col).addClass('col');
-					$(col).css('width',widthCol + "%");
-
-					if (!isNaN(arr[x])) {
-						if (arr[x] == 0 ) {
-							$(col).text(arr[x]);
-						} else {
-							var numberTest = arr[x] + "";
-							if (numberTest.length > 4) {
-								
-								arr[x] = arr[x].toFixed(1);
-								$(col).text(arr[x]);
-
-							} else {
-								$(col).text(arr[x]);
-							}
-						}
-					} else {
-
-						$(col).text(arr[x]);
-
-					}
-					
-					row.appendChild(col);
-
-				}
-
-				holderEndInfo.appendChild(row);
-			}
-
-			//________________________________________________________СТАРТ ПРИЛОЖЕНИЯ ____________________________
-			//_____________________________________________________________________________________________________
-
-			var count = +$('.counter').val();
-
-			if (count == 0) {
-
-				$('.infoButton').text("Не может быть пустым , или ровняться нулю!!");
-
-			} else if (!!isNaN(count)) {
-
-				$('.infoButton').text("Только Числа !!");
-
-			} else if (!($(allRowLength[0]).find('Data').length == count)) {
-
-				$('.infoButton').text("Не ври на счет столбцов, я все равно узнаю :)");
-
-			} else {
-				
-				var time = performance.now();
-				// Спид тест
-
-				parseArr(arr,count);
-
-				var xml;  //Создание нового файла
-
-			    if(window.XMLHttpRequest) {  
-			        xml=new window.XMLHttpRequest();  
-			        xml.open("GET", 'upload/workSpace.xml', false);  
-			        xml.send("");  		       
-			    }  
-			    else  { 
-			        
-			        if(window.ActiveXObject) {  
-			            xml=new ActiveXObject("Microsoft.XMLDOM");  
-			            xml.async=false;  
-			            xml.load(url);   
-			            return xml;   
-			        }  else  {  
-			            alert("Загрузка XML не поддерживается браузером");  
-			            return null;  
-			        }  
-			    }
-
-			    xml = xml.responseXML;
-
-			    var xmlData = xml.getElementsByTagName('Data');
-
-			    var newXMLitem = $('.result-box .col');
-
-			    for (var i = 0;i < xmlData.length;i++) {
-		    		if (newXMLitem[i] == undefined) {
-
-		    			$(xmlData[i]).text('');
-
-		    		} else {
-		    			
-		    			var item = $(newXMLitem[i]).text();
-		    	  		$(xmlData[i]).text(item);
-
-		    			var strObj = xmlData[i].outerHTML;
-
-		    	  		var testItem = $(newXMLitem[i]).text();
-
-		    			if (!isNaN(testItem)) { // Переструктурирование XML DOM в зависимости от типа данных в ячейке
-
-		    				xmlData[i].outerHTML = strObj.replace('ss:Type="String"','ss:Type="Number"');
-
-		    			} else if (typeof testItem == typeof "string") {
-
-		    				xmlData[i].outerHTML = strObj.replace('ss:Type="Number"','ss:Type="String"');
-
-		    			}	    			
-
-		    		}
-
-			    }
-
-				var serializer = new XMLSerializer();
-				serialized = serializer.serializeToString(xml);
-
-			    $.ajax({
-				  type: "POST",
-				  url: "some.php",
-				  data: "string=" + serialized,
-				  response:"text",
-				  cache:false,
-				  success: function(msg){
-				  	
-				  }
-				});
-
-			    var countOld = xml.getElementsByTagName('Row');
-				var countRow = $('.result-box .row');
-				
-				var procent = (100 - (countRow.length/countOld.length * 100)).toFixed(0) + "%";
-				
-				$('.procent').text(procent);
-				$('.countRowOld').text(+countOld.length);
-				$('.countRowNew').text(+countRow.length);
-				$('.infoButton').text("Успешно");
-
-				time = performance.now() - time;
-				$('.timeUp').text(+time.toFixed(0) + " Мс");
-			}
-
-		});
-
-	</script>
-
-
+	<script src="js/global.js"></script>
 
 	<script>
 
 		setTimeout(function () { $("#preloader-holder").remove(); },1200);
 
-
-
-		
-		
 	</script>
 
 </html>
