@@ -16,9 +16,6 @@ var convertApp = new Vue({
 	methods: {
 		startConvert: function () {
 
-
-
-
 			this.getXMLDocument();
 
 			this.oldTime = performance.now();
@@ -82,6 +79,7 @@ var convertApp = new Vue({
 		    }
 
 			var serializer = new XMLSerializer();
+
 			serialized = serializer.serializeToString(xml);
 
 		    $.ajax({
@@ -285,7 +283,6 @@ var convertApp = new Vue({
 
 			}
 
-
 			for (var e = 0;e < result.length;e++) {
 
 				for (var h = 0;h < result[e].length;h++) {
@@ -339,7 +336,8 @@ var convertApp = new Vue({
 		    var xmlData = xml.getElementsByTagName('Data');
 
 		    var newXMLitem = $('.result span');
-		    var imp = 0;
+
+		    // var imp = 0;
 
 		    for (var i = 0;i < xmlData.length;i++) {
 
@@ -360,13 +358,7 @@ var convertApp = new Vue({
 
 	    			// }
 
-
-
-
 	    			var item = $(newXMLitem[i]).text().replace(/(^\s*)|(\s*)$/g, '');
-
-
-
 
 	    	  		$(xmlData[i]).text(item);
 
