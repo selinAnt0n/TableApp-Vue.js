@@ -306,9 +306,15 @@ var convertApp = new Vue({
 
 			this.procentNew = 100 - ((this.result.length / this.countRowOld ) * 100);
 			
-
+			console.log('daaaaaa');
 		},
 		createFile: function () {
+
+
+			
+			console.log('da');
+
+
 
 			var xml;  //Создание нового файла
 
@@ -336,6 +342,11 @@ var convertApp = new Vue({
 
 		    var newXMLitem = $('.result span');
 
+
+
+
+
+
 		    for (var i = 0;i < xmlData.length;i++) {
 
 	    		if (newXMLitem[i] == undefined) {
@@ -345,7 +356,12 @@ var convertApp = new Vue({
 	    		} else {
 	    			
 	    			var item = $(newXMLitem[i]).text().replace(/\s/ig,"");
+
+	    			
+
 	    	  		$(xmlData[i]).text(item);
+
+
 
 	    			var strObj = xmlData[i].outerHTML;
 
@@ -353,7 +369,7 @@ var convertApp = new Vue({
 
 	    			if (!isNaN(testItem)) { // Переструктурирование XML DOM в зависимости от типа данных в ячейке
 
-	    				testItem = 
+	    				 
 
 	    				xmlData[i].outerHTML = strObj.replace('ss:Type="String"','ss:Type="Number"');
 
@@ -366,6 +382,12 @@ var convertApp = new Vue({
 	    		}
 
 		    }
+
+
+
+
+
+
 
 			var serializer = new XMLSerializer();
 

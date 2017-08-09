@@ -43,181 +43,181 @@
    <Column ss:Index="11" ss:AutoFitWidth="0" ss:Width="114"/>
    <Column ss:AutoFitWidth="0" ss:Width="203.25"/>
    <Row ss:AutoFitHeight="0">
-    <Cell><Data ss:Type="String"/></Cell>
-    <Cell><Data ss:Type="Number"/></Cell>
-    <Cell><Data ss:Type="Number"/></Cell>
-    <Cell><Data ss:Type="Number"/></Cell>
-    <Cell><Data ss:Type="Number"/></Cell>
-    <Cell><Data ss:Type="Number"/></Cell>
-    <Cell><Data ss:Type="Number"/></Cell>
-    <Cell ss:StyleID="s62"><Data ss:Type="Number"/></Cell>
-    <Cell><Data ss:Type="Number"/></Cell>
-    <Cell><Data ss:Type="Number"/></Cell>
-    <Cell ss:StyleID="s62"><Data ss:Type="Number"/></Cell>
+    <Cell><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="String">Heviz General MSK_SPB</Data></Cell>
+    <Cell><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="Number">6546.000</Data></Cell>
+    <Cell><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="Number">49888.000</Data></Cell>
+    <Cell><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="Number">97.000</Data></Cell>
+    <Cell><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="Number">2142.360</Data></Cell>
+    <Cell><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="Number">44.000</Data></Cell>
+    <Cell><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="Number">58.000</Data></Cell>
+    <Cell ss:StyleID="s62"><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="Number">0.082</Data></Cell>
+    <Cell><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="Number">808.540</Data></Cell>
+    <Cell><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="Number">11.640</Data></Cell>
+    <Cell ss:StyleID="s62"><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="Number">16.647</Data></Cell>
     <Cell ss:StyleID="s63"/>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell><Data ss:Type="String"/></Cell>
-    <Cell><Data ss:Type="Number"/></Cell>
-    <Cell><Data ss:Type="Number"/></Cell>
-    <Cell><Data ss:Type="Number"/></Cell>
-    <Cell><Data ss:Type="Number"/></Cell>
-    <Cell><Data ss:Type="Number"/></Cell>
-    <Cell><Data ss:Type="Number"/></Cell>
-    <Cell ss:StyleID="s62"><Data ss:Type="Number"/></Cell>
-    <Cell><Data ss:Type="Number"/></Cell>
-    <Cell><Data ss:Type="Number"/></Cell>
-    <Cell ss:StyleID="s62"><Data ss:Type="Number"/></Cell>
+    <Cell><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="String">Heviz General-RF Konv</Data></Cell>
+    <Cell><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="Number">5218.000</Data></Cell>
+    <Cell><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="Number">35456.000</Data></Cell>
+    <Cell><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="Number">85.800</Data></Cell>
+    <Cell><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="Number">1407.020</Data></Cell>
+    <Cell><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="Number">34.000</Data></Cell>
+    <Cell><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="Number">32.000</Data></Cell>
+    <Cell ss:StyleID="s62"><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="Number">0.073</Data></Cell>
+    <Cell><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="Number">493.720</Data></Cell>
+    <Cell><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="Number">10.520</Data></Cell>
+    <Cell ss:StyleID="s62"><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="Number">15.889</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell><Data ss:Type="String"/></Cell>
-    <Cell><Data ss:Type="Number"/></Cell>
-    <Cell><Data ss:Type="Number"/></Cell>
-    <Cell><Data ss:Type="Number"/></Cell>
-    <Cell><Data ss:Type="Number"/></Cell>
-    <Cell><Data ss:Type="Number"/></Cell>
-    <Cell><Data ss:Type="Number"/></Cell>
-    <Cell ss:StyleID="s62"><Data ss:Type="Number"/></Cell>
-    <Cell><Data ss:Type="Number"/></Cell>
-    <Cell><Data ss:Type="Number"/></Cell>
-    <Cell ss:StyleID="s62"><Data ss:Type="Number"/></Cell>
+    <Cell><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="String">Heviz General-Germany</Data></Cell>
+    <Cell><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="Number">1352.000</Data></Cell>
+    <Cell><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="Number">4668.000</Data></Cell>
+    <Cell><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="Number">50.600</Data></Cell>
+    <Cell><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="Number">264.540</Data></Cell>
+    <Cell><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="Number">6.000</Data></Cell>
+    <Cell><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="Number">14.000</Data></Cell>
+    <Cell ss:StyleID="s62"><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="Number">0.047</Data></Cell>
+    <Cell><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="Number">86.740</Data></Cell>
+    <Cell><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="Number">6.580</Data></Cell>
+    <Cell ss:StyleID="s62"><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="Number">14.796</Data></Cell>
     <Cell ss:StyleID="s63"/>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell><Data ss:Type="String"/></Cell>
-    <Cell><Data ss:Type="Number"/></Cell>
-    <Cell><Data ss:Type="Number"/></Cell>
-    <Cell><Data ss:Type="Number"/></Cell>
-    <Cell><Data ss:Type="Number"/></Cell>
-    <Cell><Data ss:Type="Number"/></Cell>
-    <Cell><Data ss:Type="Number"/></Cell>
-    <Cell ss:StyleID="s62"><Data ss:Type="Number"/></Cell>
-    <Cell><Data ss:Type="Number"/></Cell>
-    <Cell><Data ss:Type="Number"/></Cell>
-    <Cell ss:StyleID="s62"><Data ss:Type="Number"/></Cell>
+    <Cell><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="String">Heviz General-KZ</Data></Cell>
+    <Cell><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="Number">528.000</Data></Cell>
+    <Cell><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="Number">2326.000</Data></Cell>
+    <Cell><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="Number">70.000</Data></Cell>
+    <Cell><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="Number">121.720</Data></Cell>
+    <Cell><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="Number">8.000</Data></Cell>
+    <Cell><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="Number">6.000</Data></Cell>
+    <Cell ss:StyleID="s62"><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="Number">0.148</Data></Cell>
+    <Cell><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="Number">61.720</Data></Cell>
+    <Cell><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="Number">5.140</Data></Cell>
+    <Cell ss:StyleID="s62"><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="Number">8.150</Data></Cell>
     <Cell ss:StyleID="s63"/>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell><Data ss:Type="String"/></Cell>
-    <Cell><Data ss:Type="Number"/></Cell>
-    <Cell><Data ss:Type="Number"/></Cell>
-    <Cell><Data ss:Type="Number"/></Cell>
-    <Cell><Data ss:Type="Number"/></Cell>
-    <Cell><Data ss:Type="Number"/></Cell>
-    <Cell><Data ss:Type="Number"/></Cell>
-    <Cell ss:StyleID="s62"><Data ss:Type="Number"/></Cell>
-    <Cell><Data ss:Type="Number"/></Cell>
-    <Cell><Data ss:Type="Number"/></Cell>
-    <Cell ss:StyleID="s62"><Data ss:Type="Number"/></Cell>
+    <Cell><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="String">Heviz General-CIS</Data></Cell>
+    <Cell><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="Number">1828.000</Data></Cell>
+    <Cell><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="Number">9524.000</Data></Cell>
+    <Cell><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="Number">62.400</Data></Cell>
+    <Cell><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="Number">480.500</Data></Cell>
+    <Cell><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="Number">8.000</Data></Cell>
+    <Cell><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="Number">20.000</Data></Cell>
+    <Cell ss:StyleID="s62"><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="Number">0.062</Data></Cell>
+    <Cell><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="Number">379.040</Data></Cell>
+    <Cell><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="Number">7.740</Data></Cell>
+    <Cell ss:StyleID="s62"><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="Number">14.507</Data></Cell>
     <Cell ss:StyleID="s63"/>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell><Data ss:Type="String"/></Cell>
-    <Cell><Data ss:Type="Number"/></Cell>
-    <Cell><Data ss:Type="Number"/></Cell>
-    <Cell><Data ss:Type="Number"/></Cell>
-    <Cell><Data ss:Type="Number"/></Cell>
-    <Cell><Data ss:Type="Number"/></Cell>
-    <Cell><Data ss:Type="Number"/></Cell>
-    <Cell ss:StyleID="s62"><Data ss:Type="Number"/></Cell>
-    <Cell><Data ss:Type="Number"/></Cell>
-    <Cell><Data ss:Type="Number"/></Cell>
-    <Cell ss:StyleID="s62"><Data ss:Type="Number"/></Cell>
+    <Cell><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="String">Heviz General-Latvia</Data></Cell>
+    <Cell><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="Number">130.000</Data></Cell>
+    <Cell><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="Number">626.000</Data></Cell>
+    <Cell><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="Number">54.000</Data></Cell>
+    <Cell><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="Number">48.380</Data></Cell>
+    <Cell><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="Number">2.000</Data></Cell>
+    <Cell><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="Number">6.000</Data></Cell>
+    <Cell ss:StyleID="s62"><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="Number">0.077</Data></Cell>
+    <Cell><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="Number">21.980</Data></Cell>
+    <Cell><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="Number">4.980</Data></Cell>
+    <Cell ss:StyleID="s62"><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="Number">9.280</Data></Cell>
     <Cell ss:StyleID="s63"/>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell><Data ss:Type="String"/></Cell>
-    <Cell><Data ss:Type="Number"/></Cell>
-    <Cell><Data ss:Type="Number"/></Cell>
-    <Cell><Data ss:Type="Number"/></Cell>
-    <Cell><Data ss:Type="Number"/></Cell>
-    <Cell><Data ss:Type="Number"/></Cell>
-    <Cell><Data ss:Type="Number"/></Cell>
-    <Cell ss:StyleID="s62"><Data ss:Type="Number"/></Cell>
-    <Cell><Data ss:Type="Number"/></Cell>
-    <Cell><Data ss:Type="Number"/></Cell>
-    <Cell ss:StyleID="s62"><Data ss:Type="Number"/></Cell>
+    <Cell><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="String">Anton</Data></Cell>
+    <Cell><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="Number">368.000</Data></Cell>
+    <Cell><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="Number">2308.000</Data></Cell>
+    <Cell><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="Number">11.400</Data></Cell>
+    <Cell><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="Number">117.120</Data></Cell>
+    <Cell><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="Number">0.000</Data></Cell>
+    <Cell><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="Number">8.000</Data></Cell>
+    <Cell ss:StyleID="s62"><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="Number">0.000</Data></Cell>
+    <Cell><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="Number">0.000</Data></Cell>
+    <Cell><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="Number">1.640</Data></Cell>
+    <Cell ss:StyleID="s62"><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="Number">1.704</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell><Data ss:Type="String"/></Cell>
-    <Cell><Data ss:Type="Number"/></Cell>
-    <Cell><Data ss:Type="Number"/></Cell>
-    <Cell><Data ss:Type="Number"/></Cell>
-    <Cell><Data ss:Type="Number"/></Cell>
-    <Cell><Data ss:Type="Number"/></Cell>
-    <Cell><Data ss:Type="Number"/></Cell>
-    <Cell ss:StyleID="s62"><Data ss:Type="Number"/></Cell>
-    <Cell><Data ss:Type="Number"/></Cell>
-    <Cell><Data ss:Type="Number"/></Cell>
-    <Cell ss:StyleID="s62"><Data ss:Type="Number"/></Cell>
+    <Cell><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="String">Heviz General-Israel</Data></Cell>
+    <Cell><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="Number">1324.000</Data></Cell>
+    <Cell><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="Number">5834.000</Data></Cell>
+    <Cell><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="Number">60.200</Data></Cell>
+    <Cell><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="Number">351.860</Data></Cell>
+    <Cell><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="Number">8.000</Data></Cell>
+    <Cell><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="Number">8.000</Data></Cell>
+    <Cell ss:StyleID="s62"><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="Number">0.058</Data></Cell>
+    <Cell><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="Number">68.740</Data></Cell>
+    <Cell><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="Number">5.440</Data></Cell>
+    <Cell ss:StyleID="s62"><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="Number">5.824</Data></Cell>
     <Cell ss:StyleID="s63"/>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell><Data ss:Type="String"/></Cell>
-    <Cell><Data ss:Type="Number"/></Cell>
-    <Cell><Data ss:Type="Number"/></Cell>
-    <Cell><Data ss:Type="Number"/></Cell>
-    <Cell><Data ss:Type="Number"/></Cell>
-    <Cell><Data ss:Type="Number"/></Cell>
-    <Cell><Data ss:Type="Number"/></Cell>
-    <Cell ss:StyleID="s62"><Data ss:Type="Number"/></Cell>
-    <Cell><Data ss:Type="Number"/></Cell>
-    <Cell><Data ss:Type="Number"/></Cell>
-    <Cell ss:StyleID="s62"><Data ss:Type="Number"/></Cell>
+    <Cell><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="String">Heviz General-All countries</Data></Cell>
+    <Cell><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="Number">5482.000</Data></Cell>
+    <Cell><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="Number">27874.000</Data></Cell>
+    <Cell><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="Number">72.800</Data></Cell>
+    <Cell><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="Number">1369.840</Data></Cell>
+    <Cell><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="Number">52.000</Data></Cell>
+    <Cell><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="Number">34.000</Data></Cell>
+    <Cell ss:StyleID="s62"><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="Number">0.097</Data></Cell>
+    <Cell><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="Number">146.960</Data></Cell>
+    <Cell><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="Number">8.980</Data></Cell>
+    <Cell ss:StyleID="s62"><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="Number">17.616</Data></Cell>
     <Cell ss:StyleID="s64"/>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell><Data ss:Type="String"/></Cell>
-    <Cell><Data ss:Type="Number"/></Cell>
-    <Cell><Data ss:Type="Number"/></Cell>
-    <Cell><Data ss:Type="Number"/></Cell>
-    <Cell><Data ss:Type="Number"/></Cell>
-    <Cell><Data ss:Type="Number"/></Cell>
-    <Cell><Data ss:Type="Number"/></Cell>
-    <Cell ss:StyleID="s62"><Data ss:Type="Number"/></Cell>
-    <Cell><Data ss:Type="Number"/></Cell>
-    <Cell><Data ss:Type="Number"/></Cell>
-    <Cell ss:StyleID="s62"><Data ss:Type="Number"/></Cell>
+    <Cell><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="String">Heviz General-Belarus</Data></Cell>
+    <Cell><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="Number">430.000</Data></Cell>
+    <Cell><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="Number">2012.000</Data></Cell>
+    <Cell><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="Number">61.400</Data></Cell>
+    <Cell><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="Number">164.940</Data></Cell>
+    <Cell><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="Number">4.000</Data></Cell>
+    <Cell><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="Number">14.000</Data></Cell>
+    <Cell ss:StyleID="s62"><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="Number">0.314</Data></Cell>
+    <Cell><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="Number">65.800</Data></Cell>
+    <Cell><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="Number">8.380</Data></Cell>
+    <Cell ss:StyleID="s62"><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="Number">5.881</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell><Data ss:Type="String"/></Cell>
-    <Cell><Data ss:Type="Number"/></Cell>
-    <Cell><Data ss:Type="Number"/></Cell>
-    <Cell><Data ss:Type="Number"/></Cell>
-    <Cell><Data ss:Type="Number"/></Cell>
-    <Cell><Data ss:Type="Number"/></Cell>
-    <Cell><Data ss:Type="Number"/></Cell>
-    <Cell ss:StyleID="s62"><Data ss:Type="Number"/></Cell>
-    <Cell><Data ss:Type="Number"/></Cell>
-    <Cell><Data ss:Type="Number"/></Cell>
-    <Cell ss:StyleID="s62"><Data ss:Type="Number"/></Cell>
+    <Cell><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="String">Heviz General-USA</Data></Cell>
+    <Cell><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="Number">44.000</Data></Cell>
+    <Cell><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="Number">184.000</Data></Cell>
+    <Cell><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="Number">28.600</Data></Cell>
+    <Cell><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="Number">28.460</Data></Cell>
+    <Cell><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="Number">0.000</Data></Cell>
+    <Cell><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="Number">0.000</Data></Cell>
+    <Cell ss:StyleID="s62"><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="Number">0.000</Data></Cell>
+    <Cell><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="Number">0.000</Data></Cell>
+    <Cell><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="Number">11.920</Data></Cell>
+    <Cell ss:StyleID="s62"><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="Number">5.013</Data></Cell>
     <Cell ss:StyleID="s63"/>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell><Data ss:Type="String"/></Cell>
-    <Cell><Data ss:Type="Number"/></Cell>
-    <Cell><Data ss:Type="Number"/></Cell>
-    <Cell><Data ss:Type="Number"/></Cell>
-    <Cell><Data ss:Type="Number"/></Cell>
-    <Cell><Data ss:Type="Number"/></Cell>
-    <Cell><Data ss:Type="Number"/></Cell>
-    <Cell ss:StyleID="s62"><Data ss:Type="Number"/></Cell>
-    <Cell><Data ss:Type="Number"/></Cell>
-    <Cell><Data ss:Type="Number"/></Cell>
-    <Cell ss:StyleID="s62"><Data ss:Type="Number"/></Cell>
+    <Cell><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="String">Heviz General-Ukraine</Data></Cell>
+    <Cell><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="Number">5358.000</Data></Cell>
+    <Cell><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="Number">28106.000</Data></Cell>
+    <Cell><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="Number">79.800</Data></Cell>
+    <Cell><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="Number">1263.540</Data></Cell>
+    <Cell><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="Number">22.000</Data></Cell>
+    <Cell><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="Number">22.000</Data></Cell>
+    <Cell ss:StyleID="s62"><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="Number">0.061</Data></Cell>
+    <Cell><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="Number">416.500</Data></Cell>
+    <Cell><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="Number">9.700</Data></Cell>
+    <Cell ss:StyleID="s62"><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="Number">19.910</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell><Data ss:Type="String"/></Cell>
-    <Cell><Data ss:Type="Number"/></Cell>
-    <Cell><Data ss:Type="Number"/></Cell>
-    <Cell><Data ss:Type="Number"/></Cell>
-    <Cell><Data ss:Type="Number"/></Cell>
-    <Cell><Data ss:Type="Number"/></Cell>
-    <Cell><Data ss:Type="Number"/></Cell>
-    <Cell ss:StyleID="s62"><Data ss:Type="Number"/></Cell>
-    <Cell><Data ss:Type="Number"/></Cell>
-    <Cell><Data ss:Type="Number"/></Cell>
-    <Cell ss:StyleID="s62"><Data ss:Type="Number"/></Cell>
+    <Cell><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="String">--</Data></Cell>
+    <Cell><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="Number">1235364.000</Data></Cell>
+    <Cell><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="Number">78940944.000</Data></Cell>
+    <Cell><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="Number">6.400</Data></Cell>
+    <Cell><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="Number">329338.520</Data></Cell>
+    <Cell><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="Number">13688.000</Data></Cell>
+    <Cell><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="Number">14098.000</Data></Cell>
+    <Cell ss:StyleID="s62"><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="Number">0.036</Data></Cell>
+    <Cell><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="Number">130.000</Data></Cell>
+    <Cell><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="Number">1.080</Data></Cell>
+    <Cell ss:StyleID="s62"><Data xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" ss:Type="Number">1.528</Data></Cell>
     <Cell ss:StyleID="s63"/>
    </Row>
    <Row ss:AutoFitHeight="0">

@@ -16,6 +16,9 @@ var convertApp = new Vue({
 	methods: {
 		startConvert: function () {
 
+
+
+
 			this.getXMLDocument();
 
 			this.oldTime = performance.now();
@@ -29,7 +32,8 @@ var convertApp = new Vue({
 		        xml=new window.XMLHttpRequest();  
 		        xml.open("GET", 'upload/workSpace.xml', false);  
 		        xml.send("");  		       
-		    }  
+		    } 
+
 		    else  { 
 		        
 		        if(window.ActiveXObject) {  
@@ -335,6 +339,7 @@ var convertApp = new Vue({
 		    var xmlData = xml.getElementsByTagName('Data');
 
 		    var newXMLitem = $('.result span');
+		    var imp = 0;
 
 		    for (var i = 0;i < xmlData.length;i++) {
 
@@ -344,7 +349,25 @@ var convertApp = new Vue({
 
 	    		} else {
 	    			
-	    			var item = $(newXMLitem[i]).text().replace(/\s/ig,"");
+	    			// if (i == imp) {
+
+	    			// 	var item = $(newXMLitem[i]).text();
+	    			// 	imp += this.countColumn;
+
+	    			// } else {
+
+	    			// 	var item = $(newXMLitem[i]).text().replace(/\s/ig,"");
+
+	    			// }
+
+
+
+
+	    			var item = $(newXMLitem[i]).text().replace(/(^\s*)|(\s*)$/g, '');
+
+
+
+
 	    	  		$(xmlData[i]).text(item);
 
 	    			var strObj = xmlData[i].outerHTML;
@@ -353,7 +376,6 @@ var convertApp = new Vue({
 
 	    			if (!isNaN(testItem)) { // Переструктурирование XML DOM в зависимости от типа данных в ячейке
 
-	    				testItem = 
 
 	    				xmlData[i].outerHTML = strObj.replace('ss:Type="String"','ss:Type="Number"');
 
