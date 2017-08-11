@@ -16,6 +16,10 @@ var convertApp = new Vue({
 	methods: {
 		startConvert: function () {
 
+			// ============================
+			// Start APP
+			// ============================
+
 			this.getXMLDocument();
 
 			this.oldTime = performance.now();
@@ -94,6 +98,10 @@ var convertApp = new Vue({
 			});
 		},
 		parseArr: function (arrXml,count) {
+
+			// ============================
+			// Parse XML 
+			// ============================
 			let globalArr = [];
 
 			let row = arrXml.length/count;
@@ -112,6 +120,10 @@ var convertApp = new Vue({
 			
 		},
 		getXMLDocument: function () {
+
+			// ============================
+			// Download XML 
+			// ============================
 
 			var xml;
 
@@ -157,6 +169,10 @@ var convertApp = new Vue({
 			this.arr = obj;
 		},
 		searchName: function (arr) {
+
+			// ============================
+			// Search Names 
+			// ============================
 
 			var count = 0;
 
@@ -248,6 +264,10 @@ var convertApp = new Vue({
 
 		},
 		MathArr: function (arr) {
+
+			// ============================
+			// Marth all Names 
+			// ============================
 			
 			var result = [];
 
@@ -311,6 +331,10 @@ var convertApp = new Vue({
 		},
 		createFile: function () {
 
+			// ============================
+			// Create XML file 
+			// ============================
+
 			var xml;  //Создание нового файла
 
 		    if(window.XMLHttpRequest) {  
@@ -337,8 +361,6 @@ var convertApp = new Vue({
 
 		    var newXMLitem = $('.result span');
 
-		    // var imp = 0;
-
 		    for (var i = 0;i < xmlData.length;i++) {
 
 	    		if (newXMLitem[i] == undefined) {
@@ -346,17 +368,6 @@ var convertApp = new Vue({
 	    			$(xmlData[i]).text('');
 
 	    		} else {
-	    			
-	    			// if (i == imp) {
-
-	    			// 	var item = $(newXMLitem[i]).text();
-	    			// 	imp += this.countColumn;
-
-	    			// } else {
-
-	    			// 	var item = $(newXMLitem[i]).text().replace(/\s/ig,"");
-
-	    			// }
 
 	    			var item = $(newXMLitem[i]).text().replace(/(^\s*)|(\s*)$/g, '');
 
@@ -409,6 +420,10 @@ var tableStepOne = new Vue({
 	},
 	methods: {
 		changeFile: function (e) {
+
+			// ============================
+			// Upload new XML 
+			// ============================
 
 			let name = e.srcElement.files[0].name.split(".");
 

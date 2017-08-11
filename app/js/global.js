@@ -16,6 +16,10 @@ var convertApp = new Vue({
 	methods: {
 		startConvert: function () {
 
+			// ============================
+			// Start APP
+			// ============================
+
 			this.getXMLDocument();
 
 			this.oldTime = performance.now();
@@ -94,6 +98,10 @@ var convertApp = new Vue({
 			});
 		},
 		parseArr: function (arrXml,count) {
+
+			// ============================
+			// Parse XML 
+			// ============================
 			let globalArr = [];
 
 			let row = arrXml.length/count;
@@ -112,6 +120,10 @@ var convertApp = new Vue({
 			
 		},
 		getXMLDocument: function () {
+
+			// ============================
+			// Download XML 
+			// ============================
 
 			var xml;
 
@@ -157,6 +169,10 @@ var convertApp = new Vue({
 			this.arr = obj;
 		},
 		searchName: function (arr) {
+
+			// ============================
+			// Search Names 
+			// ============================
 
 			var count = 0;
 
@@ -248,6 +264,10 @@ var convertApp = new Vue({
 
 		},
 		MathArr: function (arr) {
+
+			// ============================
+			// Marth all Names 
+			// ============================
 			
 			var result = [];
 
@@ -311,6 +331,10 @@ var convertApp = new Vue({
 		},
 		createFile: function () {
 
+			// ============================
+			// Create XML file 
+			// ============================
+
 			var xml;  //Создание нового файла
 
 		    if(window.XMLHttpRequest) {  
@@ -337,8 +361,6 @@ var convertApp = new Vue({
 
 		    var newXMLitem = $('.result span');
 
-		    // var imp = 0;
-
 		    for (var i = 0;i < xmlData.length;i++) {
 
 	    		if (newXMLitem[i] == undefined) {
@@ -346,17 +368,6 @@ var convertApp = new Vue({
 	    			$(xmlData[i]).text('');
 
 	    		} else {
-	    			
-	    			// if (i == imp) {
-
-	    			// 	var item = $(newXMLitem[i]).text();
-	    			// 	imp += this.countColumn;
-
-	    			// } else {
-
-	    			// 	var item = $(newXMLitem[i]).text().replace(/\s/ig,"");
-
-	    			// }
 
 	    			var item = $(newXMLitem[i]).text().replace(/(^\s*)|(\s*)$/g, '');
 
@@ -410,6 +421,10 @@ var tableStepOne = new Vue({
 	methods: {
 		changeFile: function (e) {
 
+			// ============================
+			// Upload new XML 
+			// ============================
+
 			let name = e.srcElement.files[0].name.split(".");
 
 			if (name[1] === "xml" ) {
@@ -459,331 +474,603 @@ var tableStepOne = new Vue({
 	}
 });
 
-function getXMLDocument(url)  {  //Получение одномерного XML
-
-	    var xml; 
-
-	    if(window.XMLHttpRequest)  {  
-	        xml = new window.XMLHttpRequest();  
-	        xml.open("GET", url, false);  
-	        xml.send("");  
-	        return xml.responseXML;  
-	       
-	    }  else  {
-	        
-	        if(window.ActiveXObject) {  
-	            xml=new ActiveXObject("Microsoft.XMLDOM");  
-	            xml.async=false;  
-	            xml.load(url);   
-	            return xml;   
-	        }  else  {  
-	            alert("Загрузка XML не поддерживается браузером");  
-	            return null;  
-	        }  
-	    }
-	}
-		
-	var arr = [];
-
-	var xml = getXMLDocument('upload/workSpace.xml');
-
-    var allRow2 = xml.getElementsByTagName('Row');
-
-    var xml = getXMLDocument('upload/workSpace.xml');
-
-    var allRow = xml.getElementsByTagName('Data');
-
-    var obj = [];
-
-    for (var c = 0;c < allRow.length;c++) {
-    	
-        var test = Number.isNaN(+$(allRow[c]).text());
-
-        if (test) {
-
-            obj.push($(allRow[c]).text());
-        } else {
-        	
-            obj.push(+$(allRow[c]).text());
-        }
-    }
-
-	arr = obj;
-
-	parseArr(arr,$(allRow2[0]).find( "Data" ).length);
-
-
-
-
-
-
-
-	$(".raido-holder input").on("change", function (e) {
-
-
-
-
-		if ($(e.target).attr("id") == "uploadFileMet") {
-
-			var xml = getXMLDocument('upload/workSpace.xml');
-
-		} else {
-			
-			var xml = getXMLDocument('convertBox/convertVersion.xml');
-
+var strictApp = new Vue({
+	el:"#strictApp",
+	data: {
+		words:["в","на","под"],
+		text:""
+	},
+	methods:{
+		addWord: function () {
+			this.words.push(this.text);
+			this.text = "";
+		},
+		delWord: function (word,index) {
+			this.words.splice(index,1);
 		}
-
-
-
-
-        
-
-
-
-		
-	})
-
-
-
-
-    function parseArr(arrXml,count) {	//парсинг XML
-
-		var globalArr = [];
-
-		var row = arrXml.length/count;
-
-		for (var i = 0;i < row;i++) {
-			var str = "";
-			
-			globalArr[i] = new Array();
-			for (var j = 0;j < count;j++) {
-		
-				globalArr[i][j] = arrXml[(i*count)+j];
-			}
-		}
-
-		arr = globalArr;	
-
 	}
-
-
-
-
-
-	$('.globalColum .moreKeyWord').click(function (e) {
-
-		var holder = document.createElement("div");
-		var input = document.createElement("INPUT");
-		var button = document.createElement("button");
-
-		input.setAttribute("type", "text");
-
-		$(button).addClass("delWord");
-		$(button).text("Удалить");
-
-		$(holder).addClass("keyWord");
-
-		holder.append(button);
-		holder.append(input);
-
-		$(this).next().append(holder);
-	});
-
-	$('.holderKeyWords').on('click', '.delWord', function (e) {
-
-		$(e.target).parent().remove();
-	});
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 	
+});
+
+var arrWords = strictApp.words;
+
+var createTask = new Vue({
+	el:"#createTask",
+	data: {
+		citys:[
+			{
+				name:"Карло",
+				flag:false
+			},
+			{
+				name:"Санат",
+				flag:false
+			},
+			{
+				name:"Лечен",
+				flag:false
+			}
+
+		],
+		textCity:"",
+		choseCitys:[],
 
 
+		templates:[
+			{
+				name:"Шаблон 1",
+				data:[
+					"лечен",
+					"вар",
+					"тур"
 
+				],
+				flag:false,
+				visible:false
+			},
 
+		],
+		newWords: [
+			{
+				text:"",
+			},
+		
+		],
+		choseTemps:[],
+		wordTemp:"",
+		nameTemp:"",
+		countHolder:1,
+		visible:false,
+		showBox:false,
 
+		downloadFile:true,
+		convertFile:false,
 
+		arr:[],
+	},
+	created: function () {
+								
+		var arr = [];
 
+		var xml = this.getXMLDocument('upload/workSpace.xml');
 
+	    var allRow2 = xml.getElementsByTagName('Row');
 
+	    var xml = this.getXMLDocument('upload/workSpace.xml');
 
+	    var allRow = xml.getElementsByTagName('Data');
 
+	    var obj = [];
 
+	    for (var c = 0;c < allRow.length;c++) {
+	    	
+	        var test = Number.isNaN(+$(allRow[c]).text());
 
+	        if (test) {
 
+	            obj.push($(allRow[c]).text());
+	        } else {
+	        	
+	            obj.push(+$(allRow[c]).text());
+	        }
+	    }
 
+		this.arr = obj;
 
+		this.parseArr(this.arr,$(allRow2[0]).find( "Data" ).length);
+	},
+	methods:{
+		getXMLDocument: function (url) {
+			var xml; 
 
+		    if(window.XMLHttpRequest)  {  
+		        xml = new window.XMLHttpRequest();  
+		        xml.open("GET", url, false);  
+		        xml.send("");  
+		        return xml.responseXML;  
+		       
+		    }  else  {
+		        
+		        if(window.ActiveXObject) {  
+		            xml=new ActiveXObject("Microsoft.XMLDOM");  
+		            xml.async=false;  
+		            xml.load(url);   
+		            return xml;   
+		        }  else  {  
+		            alert("Загрузка XML не поддерживается браузером");  
+		            return null;  
+		        }  
+		    }
+		},
+		parseArr: function (arrXml,count) {
+			var globalArr = [];
 
+			var row = arrXml.length/count;
 
+			for (var i = 0;i < row;i++) {
 
+				var str = "";
+				
+				globalArr[i] = new Array();
 
+				for (var j = 0;j < count;j++) {
+			
+					globalArr[i][j] = arrXml[(i*count)+j];
 
-
-
-
-	$(".go").click(function () {
-
-		var holder = $(this).parent();
-
-		var step1 = $(this).next().next().next().next();
-
-		var step2 = $(step1).find('.keyWord');
-
-		var step3 = $(step2).find('input');
-
-		$(step2).removeClass("noSearch");
-
-		var globalArr = [];
-
-
-		function searchWords() {
-
-			var allWord = step3;
-
-			var resultHolder = $(holder).find(".result-box");
-
-			$(resultHolder).find("span").remove();
-
-			globalCount = allWord.length;
-
-			for (var i = 0;i < arr.length;i++) {
-
-				let str =  arr[i][0];
-
-				if (!(isNaN(str))) {
-
-					return console.warn("конец таблицы !");
-
-				} else {
-					str = str.toLowerCase();
-				}
-
-				let innerCount = 0;
-
-				for (var j = 0;j < globalCount;j++) {
-
-					let searStr = $(allWord[j]).val();
-
-					searStr = searStr.toLowerCase();
-					
-					if ( str.indexOf(searStr,0) >= 0) {
-
-						innerCount++;
-
-					}
-
-				}
-
-				if (globalCount == innerCount) {
-					globalArr.push(arr[i]);
 				}
 			}
-		}
+
+			this.arr = [];
+
+			this.arr = globalArr;
+
+		},
+		useFile1: function () {
+
+			this.downloadFile = true;
+			this.convertFile = false;
+
+			var xml = this.getXMLDocument('upload/workSpace.xml');
+			this.getXml(xml);	
+		},
+		useFile2: function () {
+
+			this.downloadFile = false;
+			this.convertFile = true;
+
+			var xml = this.getXMLDocument('convertBox/convertVersion.xml');
+			this.getXml(xml);
+		},
+		getXml: function (xml) {
+
+			var allRow2 = xml.getElementsByTagName('Row');
 
 
+	        if (this.downloadFile) {
 
+				var xml = this.getXMLDocument('upload/workSpace.xml');
 
+			} else {
+				
+				var xml = this.getXMLDocument('convertBox/convertVersion.xml');
 
+			}
 
+	        var allRow = xml.getElementsByTagName('Data');
 
-		function searchWordsStrict() {
+	        var obj = [];
 
-			var allWord = step3;
+	        for (var c = 0;c < allRow.length;c++) {
+	        	
+	            var test = Number.isNaN(+$(allRow[c]).text());
 
-			var resultHolder = $(holder).find(".result-box");
+	            if (test) {
 
-			$(resultHolder).find("span").remove();
+	                obj.push($(allRow[c]).text());
+	            } else {
+	            	
+	                obj.push(+$(allRow[c]).text());
+	            }
+	        }
 
-			globalCount = allWord.length;
+			this.arr = obj;
 
-			for (var i = 0;i < arr.length;i++) {
+			this.parseArr(this.arr,$(allRow2[0]).find( "Data" ).length);
 
-				let str =  arr[i][0];
+		},
+		choseCity: function (city,index) {
 
-				if (!(isNaN(str))) {
+			city.flag = !city.flag; 
 
-					return console.warn("конец таблицы !");
+			if (city.flag) {
+				this.choseCitys.push(city.name);
+			} else {
+				for (var i =0;i < this.choseCitys.length;i++) {
 
-				} else {
+					if (this.choseCitys[i] == city.name) {
+						this.choseCitys.splice(i,1);
+					}
+				}
+			}	
 
-					str = str.toLowerCase();
+		},
+		choseTemp: function (temp,index) {
+
+			temp.flag = !temp.flag; 
+
+			if (temp.flag) {
+				this.choseTemps.push(temp)
+			}else {
+
+				for (var i =0;i < this.choseTemps.length;i++) {
+
+					if (this.choseTemps[i] == temp) {
+						this.choseTemps.splice(i,1);
+					}
+				}
+			}
+
+		},
+		addCity: function () {
+			this.citys.push({
+				name: this.textCity,
+				flag:false
+			});
+			this.textCity = "";
+		},
+		addNewWord: function(newWord) {      
+			this.newWords.push({ number: newWord.number });
+		},
+		removeNewWord: function(index) {
+
+			this.newWords.splice(index,1);
+			
+		},
+		addTempl: function () {
+
+			let arr = [];
+			for (var i = 0;i < this.newWords.length;i++) {
+				arr.push(this.newWords[i].text);
+			}
+			this.templates.push({
+				name: this.nameTemp,
+				data:arr,
+				flag:false,
+				visible:false
+			});
+		},
+		hoverTampl: function (temp) {
+			return temp.visible = true;
+		},
+		hoverTamplOut: function (temp) {
+			return temp.visible = false;
+		},
+	}
+});
+
+var workBox = new Vue({
+	el:"#workBoxesApp",
+	data: {
+		countWords:0,
+		city:[],
+		words:[],
+		resultSearch:[],
+		messege:"",
+	},
+	
+	methods:{
+		createBoxes:function () {
+			this.words = [];
+
+			// this.countBoxes = createTask.choseTemps.length;
+
+			// if ( createTask.choseCitys.length ) {
+			// 	this.countBoxes *= createTask.choseCitys.length;
+			// }
+
+			this.city = createTask.choseCitys;
+
+			let arr = createTask.choseTemps;
+
+			var result = [];
+
+			var lastarr = [];
+
+			function createObj (data) {
+
+				this.data = data;
+				this.result = [];
+				this.strictFlag = false;
+				this.searchEmpty = false;
+				this.strictShow = true;
+				this.useExceptions = false;
+				this.countFind = 0;
+
+			}
+
+			if (arr.length && !this.city.length) {
+				this.messege = "";
+
+				for (var j =0;j < arr.length;j++) {
+					
+					result.push(arr[j].data );
 
 				}
 
-				let innerCount = 0;
+				for (var k =0;k < result.length;k++) {
 
-				for (var j = 0;j < globalCount;j++) {
+					let it = result[k];
 
-					let searStr = $(allWord[j]).val();
+					let dataItem =  {};
 
-					searStr = searStr.toLowerCase();
+					dataItem = new createObj(it); 
+
+					this.words.push(dataItem);
+
+				}
+
+			} else if (this.city.length && !arr.length) {
+				this.messege = "";
+
+				for (var i =0;i < this.city.length;i++){
+
+					result.push( this.city[i] );
+
+				}
+
+				for (var k =0;k < result.length;k++) {
+
+					let it = result[k];
+
+					it.strict = false;
 					
-					if ( str.indexOf(searStr,0) >= 0) {
+					let dataItem =  {};
+					dataItem.data = [];
 
-						innerCount++;
+					dataItem.data.push(it);
+
+					dataItem.result = [];
+					dataItem.strictFlag = false;
+					dataItem.searchEmpty = false;
+					dataItem.strictShow = true;
+					dataItem.useExceptions = false;
+
+					dataItem.countFind = 0;
+
+					this.words.push(dataItem);
+
+				}
+
+			} else if (this.city.length && arr.length) {
+				this.messege = "";
+
+				for (var i =0;i < arr.length;i++){
+					for (var j =0;j < this.city.length;j++) {
+
+						result.push(arr[i].data ,this.city[j] );
+
+					}
+					
+				}
+
+				for (var k =0;k < result.length;k=k+2) {
+
+					let item = result[k];
+
+					let it = result[k].concat(result[k+1]);
+
+					let dataItem =  {};
+
+					dataItem = new createObj(it); 
+
+					this.words.push(dataItem);
+
+				}
+			} else {
+
+				this.messege = "Выберите Город/Шаблон";
+
+			}
+
+		},
+		useStrict: function (item,index) {
+			
+			item.strictFlag = !item.strictFlag;
+		},
+		startSearch: function (item,index) {
+
+			item.countFind = 0;
+
+			var arr = createTask.arr;
+
+			var holder = $('.workbox')[index];
+
+			var globalArr = [];
+
+			var allWord = item.data;
+
+			if (item.strictFlag) {					
+
+				globalCount = allWord.length;
+
+				for (var i = 0;i < arr.length;i++) {
+
+					let str =  arr[i][0];
+					
+					if (str == 0) {
+
+						return console.warn("конец таблицы !");
+
+					} else if (typeof str == typeof "test") {
+						str = str.toLowerCase();
+					} else{
+						str = str + "";
+					}
+
+					let innerCount = 0;
+
+					for (var j = 0;j < globalCount;j++) {
+
+						var searStr = allWord[j];										
+						searStr = searStr.toLowerCase();
+
+
+						if ( str.indexOf(searStr,0) >= 0) {
+
+							innerCount++;
+
+						}
 
 					}
 
+					let reCreateArr = str.split(" ");
+
+					let strictCount = 0;
+
+					for (var c =0;c < reCreateArr.length;c++) {
+
+						
+						if (reCreateArr[c] == "" || reCreateArr[c] == " ") {
+							reCreateArr.splice(c,1);
+						}
+						
+					}
+
+					for (var t = 0;t < reCreateArr.length;t++) {
+						for (var k = 0;k < arrWords.length;k++) {
+							if (reCreateArr[t] == arrWords[k] ) {
+								
+								strictCount++;
+								
+							}
+						}
+					}
+
+					if (globalCount == innerCount && (reCreateArr.length - strictCount) == globalCount) {
+					
+						globalArr.push(arr[i]);
+
+						item.searchEmpty = false;
+
+						item.countFind = item.countFind + 1;
+
+						this.mathSTR(globalArr,index,item);
+
+					} else {
+
+						if (!globalArr.length) {
+							item.searchEmpty = true;
+						}
+					}
+
 				}
+			} else if (item.useExceptions) {
 
-				let reCreateArr = str.split(" ");
+				globalCount = allWord.length;
 
-				let strictCount = 0;
+				for (var i = 0;i < arr.length;i++) {
 
+					let str =  arr[i][0];
 
-				for (var t = 0;t < reCreateArr.length;t++) {
-					for (var k = 0;k < arrWords.length;k++) {
-						if (reCreateArr[t] == arrWords[k]) {
-							strictCount++;
+					if (str == 0) {
+
+						return console.warn("конец таблицы !");
+
+					} else if (typeof str == typeof "test") {
+						str = str.toLowerCase();
+					} else{
+						str = str + "";
+					}
+
+					let innerCount = 0;
+
+					for (var j = 0;j < globalCount;j++) {
+
+						let searStr = allWord[j];
+
+						searStr = searStr.toLowerCase();
+
+						if ( str.indexOf(searStr,0) >= 0) {
+
+							console.log(str.indexOf(searStr,0) >= 0);
+							innerCount++;
+
+						}
+
+					}
+
+					if (globalCount == innerCount) {
+					
+						if (!globalArr.length) {
+							item.searchEmpty = true;
+						}
+
+					} else {
+
+						globalArr.push(arr[i]);
+
+						item.searchEmpty = false;
+						item.countFind = item.countFind + 1;
+
+						this.mathSTR(globalArr,index,item);
+						
+					}
+
+				}
+			} else {
+					
+				globalCount = allWord.length;
+
+				for (var i = 0;i < arr.length;i++) {
+
+					let str =  arr[i][0];
+
+					if (str == 0) {
+
+						return console.warn("конец таблицы !");
+
+					} else if (typeof str == typeof "test") {
+						str = str.toLowerCase();
+					} else{
+						str = str + "";
+					}
+
+					let innerCount = 0;
+
+					for (var j = 0;j < globalCount;j++) {
+
+						let searStr = allWord[j];
+
+						searStr = searStr.toLowerCase();
+
+						if ( str.indexOf(searStr,0) >= 0) {
+
+							innerCount++;
+
+						}
+
+					}
+
+					if (globalCount == innerCount) {
+					
+						globalArr.push(arr[i]);
+
+						item.countFind = item.countFind + 1;
+
+						item.searchEmpty = false;
+
+						this.mathSTR(globalArr,index,item);
+
+					} else {
+
+						if (!globalArr.length) {
+							item.searchEmpty = true;
 						}
 					}
 				}
-			
-				if (globalCount == innerCount && (reCreateArr.length - strictCount) == globalCount) {
-				
-					globalArr.push(arr[i]);
-				
-				}
 			}
-		}
-
-
-		var strictMode = $(holder).find('.strickCheck');
-
-
-		if (strictMode.prop("checked")) {
-			searchWordsStrict();
-		} else {
-			searchWords();
-		}
-		
-
-		var counterSearch = $(holder).find('.counterSearch');
-
-		$(counterSearch).find('strong').text(globalArr.length);
-
-		if (globalArr.length > 0) {
-			mathSTR(globalArr);
-		} else {
-			$(step2).addClass("noSearch");
-		}
-		
-
-
-		function mathSTR (arr) {	//Расчет
+		},
+		mathSTR: function (arr,index,item) {
 
 			var endArr = [];
 
@@ -818,52 +1105,22 @@ function getXMLDocument(url)  {  //Получение одномерного XML
 				}
 				endArr.pop();
 				
-				viewInfo(endArr);
-			}
-		}
-		function viewInfo (arr) {   //Отображение расчета
-
-			var count = arr.length;
-
-			var result = $(holder).find('.result-box');
-
-			var holderEndInfo = result[0];
-
-			var row = document.createElement('span');
-
-			$(row).addClass("row");
-		
-			for (var x = 0; x < count;x++) {
-				var col = document.createElement('span');
-				var widthCol = 98/count;
-				$(col).addClass('col');
-				$(col).css('width',widthCol + "%");
-
-				if (!isNaN(arr[x])) {
-					if (arr[x] == 0 ) {
-						$(col).text(arr[x]);
-					} else {
-						var numberTest = arr[x] + "";
-						if (numberTest.length > 4) {
-							
-							arr[x] = arr[x].toFixed(1);
-							$(col).text(arr[x]);
-
-						} else {
-							$(col).text(arr[x]);
-						}
-					}
-				} else {
-
-					$(col).text(arr[x]);
-
-				}
-				
-				row.appendChild(col);
+				this.viewInfo(endArr,index,item);
 
 			}
+		},
+		viewInfo: function (arr,index,item) {
+			arr[0] = "____"
+			item.result = arr;
+		},
+		useExceptions: function (item,index) {
 
-			holderEndInfo.appendChild(row);
-			$(".row > span:first-of-type").text("___");
+			item.strictFlag = false;
+			item.strictShow = !item.strictShow;
+			item.useExceptions = !item.useExceptions;
+		},
+		deleteWord: function (holder,holderInner,index) {
+			holder.data.splice(index,1);
 		}
-	});
+	}
+});
