@@ -1,4 +1,7 @@
-var strictApp = new Vue({
+var strictApp = new Vue({ 
+			// ============================
+			// Strict APP
+			// ============================
 	el:"#strictApp",
 	data: {
 		words:["в","на","под"],
@@ -18,7 +21,11 @@ var strictApp = new Vue({
 
 var arrWords = strictApp.words;
 
+
 var createTask = new Vue({
+			// ============================
+			// Create tast APP
+			// ============================
 	el:"#createTask",
 	data: {
 		citys:[
@@ -38,8 +45,6 @@ var createTask = new Vue({
 		],
 		textCity:"",
 		choseCitys:[],
-
-
 		templates:[
 			{
 				name:"Шаблон 1",
@@ -73,31 +78,31 @@ var createTask = new Vue({
 		arr:[],
 	},
 	created: function () {
-								
+
 		var arr = [];
 
 		var xml = this.getXMLDocument('upload/workSpace.xml');
 
-	    var allRow2 = xml.getElementsByTagName('Row');
+		var allRow2 = xml.getElementsByTagName('Row');
 
-	    var xml = this.getXMLDocument('upload/workSpace.xml');
+		var xml = this.getXMLDocument('upload/workSpace.xml');
 
-	    var allRow = xml.getElementsByTagName('Data');
+		var allRow = xml.getElementsByTagName('Data');
 
-	    var obj = [];
+		var obj = [];
 
-	    for (var c = 0;c < allRow.length;c++) {
-	    	
-	        var test = Number.isNaN(+$(allRow[c]).text());
+		for (var c = 0;c < allRow.length;c++) {
+			
+			var test = Number.isNaN(+$(allRow[c]).text());
 
-	        if (test) {
+			if (test) {
 
-	            obj.push($(allRow[c]).text());
-	        } else {
-	        	
-	            obj.push(+$(allRow[c]).text());
-	        }
-	    }
+				obj.push($(allRow[c]).text());
+			} else {
+
+				obj.push(+$(allRow[c]).text());
+			}
+		}
 
 		this.arr = obj;
 
@@ -107,24 +112,24 @@ var createTask = new Vue({
 		getXMLDocument: function (url) {
 			var xml; 
 
-		    if(window.XMLHttpRequest)  {  
-		        xml = new window.XMLHttpRequest();  
-		        xml.open("GET", url, false);  
-		        xml.send("");  
-		        return xml.responseXML;  
-		       
-		    }  else  {
-		        
-		        if(window.ActiveXObject) {  
-		            xml=new ActiveXObject("Microsoft.XMLDOM");  
-		            xml.async=false;  
-		            xml.load(url);   
-		            return xml;   
-		        }  else  {  
-		            alert("Загрузка XML не поддерживается браузером");  
-		            return null;  
-		        }  
-		    }
+			if(window.XMLHttpRequest)  {
+				xml = new window.XMLHttpRequest();
+				xml.open("GET", url, false);
+				xml.send("");  
+				return xml.responseXML;
+			   
+			}  else  {
+				
+				if(window.ActiveXObject) {
+					xml=new ActiveXObject("Microsoft.XMLDOM");
+					xml.async=false;
+					xml.load(url);
+					return xml;
+				}  else  {
+					alert("Загрузка XML не поддерживается браузером");
+					return null;
+				}  
+			}
 		},
 		parseArr: function (arrXml,count) {
 			var globalArr = [];
@@ -147,7 +152,6 @@ var createTask = new Vue({
 			this.arr = [];
 
 			this.arr = globalArr;
-
 		},
 		useFile1: function () {
 
@@ -155,7 +159,7 @@ var createTask = new Vue({
 			this.convertFile = false;
 
 			var xml = this.getXMLDocument('upload/workSpace.xml');
-			this.getXml(xml);	
+			this.getXml(xml);
 		},
 		useFile2: function () {
 
@@ -170,41 +174,40 @@ var createTask = new Vue({
 			var allRow2 = xml.getElementsByTagName('Row');
 
 
-	        if (this.downloadFile) {
+			if (this.downloadFile) {
 
 				var xml = this.getXMLDocument('upload/workSpace.xml');
 
 			} else {
-				
+
 				var xml = this.getXMLDocument('convertBox/convertVersion.xml');
 
 			}
 
-	        var allRow = xml.getElementsByTagName('Data');
+			var allRow = xml.getElementsByTagName('Data');
 
-	        var obj = [];
+			var obj = [];
 
-	        for (var c = 0;c < allRow.length;c++) {
-	        	
-	            var test = Number.isNaN(+$(allRow[c]).text());
+			for (var c = 0;c < allRow.length;c++) {
+				
+				var test = Number.isNaN(+$(allRow[c]).text());
 
-	            if (test) {
+				if (test) {
 
-	                obj.push($(allRow[c]).text());
-	            } else {
-	            	
-	                obj.push(+$(allRow[c]).text());
-	            }
-	        }
+					obj.push($(allRow[c]).text());
+				} else {
+
+					obj.push(+$(allRow[c]).text());
+				}
+			}
 
 			this.arr = obj;
 
 			this.parseArr(this.arr,$(allRow2[0]).find( "Data" ).length);
-
 		},
 		choseCity: function (city,index) {
 
-			city.flag = !city.flag; 
+			city.flag = !city.flag;
 
 			if (city.flag) {
 				this.choseCitys.push(city.name);
@@ -215,8 +218,7 @@ var createTask = new Vue({
 						this.choseCitys.splice(i,1);
 					}
 				}
-			}	
-
+			}
 		},
 		choseTemp: function (temp,index) {
 
@@ -233,7 +235,6 @@ var createTask = new Vue({
 					}
 				}
 			}
-
 		},
 		addCity: function () {
 			this.citys.push({
@@ -248,7 +249,6 @@ var createTask = new Vue({
 		removeNewWord: function(index) {
 
 			this.newWords.splice(index,1);
-			
 		},
 		addTempl: function () {
 
@@ -273,6 +273,9 @@ var createTask = new Vue({
 });
 
 var workBox = new Vue({
+			// ============================
+			// Search APP
+			// ============================
 	el:"#workBoxesApp",
 	data: {
 		countWords:0,
@@ -285,12 +288,6 @@ var workBox = new Vue({
 	methods:{
 		createBoxes:function () {
 			this.words = [];
-
-			// this.countBoxes = createTask.choseTemps.length;
-
-			// if ( createTask.choseCitys.length ) {
-			// 	this.countBoxes *= createTask.choseCitys.length;
-			// }
 
 			this.city = createTask.choseCitys;
 
@@ -374,7 +371,7 @@ var workBox = new Vue({
 						result.push(arr[i].data ,this.city[j] );
 
 					}
-					
+
 				}
 
 				for (var k =0;k < result.length;k=k+2) {
@@ -395,7 +392,6 @@ var workBox = new Vue({
 				this.messege = "Выберите Город/Шаблон";
 
 			}
-
 		},
 		useStrict: function (item,index) {
 			
@@ -413,14 +409,14 @@ var workBox = new Vue({
 
 			var allWord = item.data;
 
-			if (item.strictFlag) {					
+			if (item.strictFlag) {
 
 				globalCount = allWord.length;
 
 				for (var i = 0;i < arr.length;i++) {
 
 					let str =  arr[i][0];
-					
+
 					if (str == 0) {
 
 						return console.warn("конец таблицы !");
@@ -435,7 +431,7 @@ var workBox = new Vue({
 
 					for (var j = 0;j < globalCount;j++) {
 
-						var searStr = allWord[j];										
+						var searStr = allWord[j];
 						searStr = searStr.toLowerCase();
 
 
@@ -453,7 +449,7 @@ var workBox = new Vue({
 
 					for (var c =0;c < reCreateArr.length;c++) {
 
-						
+
 						if (reCreateArr[c] == "" || reCreateArr[c] == " ") {
 							reCreateArr.splice(c,1);
 						}
@@ -463,9 +459,9 @@ var workBox = new Vue({
 					for (var t = 0;t < reCreateArr.length;t++) {
 						for (var k = 0;k < arrWords.length;k++) {
 							if (reCreateArr[t] == arrWords[k] ) {
-								
+
 								strictCount++;
-								
+
 							}
 						}
 					}
@@ -524,7 +520,7 @@ var workBox = new Vue({
 					}
 
 					if (globalCount == innerCount) {
-					
+
 						if (!globalArr.length) {
 							item.searchEmpty = true;
 						}
@@ -542,7 +538,7 @@ var workBox = new Vue({
 
 				}
 			} else {
-					
+
 				globalCount = allWord.length;
 
 				for (var i = 0;i < arr.length;i++) {

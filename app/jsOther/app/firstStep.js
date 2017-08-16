@@ -29,71 +29,71 @@ var convertApp = new Vue({
 
 			var xml;  //Создание нового файла
 
-		    if(window.XMLHttpRequest) {  
-		        xml=new window.XMLHttpRequest();  
-		        xml.open("GET", 'upload/workSpace.xml', false);  
-		        xml.send("");  		       
-		    } 
+			if(window.XMLHttpRequest) {  
+				xml=new window.XMLHttpRequest();  
+				xml.open("GET", 'upload/workSpace.xml', false);  
+				xml.send("");              
+			} 
 
-		    else  { 
-		        
-		        if(window.ActiveXObject) {  
-		            xml=new ActiveXObject("Microsoft.XMLDOM");  
-		            xml.async=false;  
-		            xml.load(url);   
-		            return xml;   
-		        }  else  {  
-		            alert("Загрузка XML не поддерживается браузером");  
-		            return null;  
-		        }  
-		    }
+			else  { 
+				
+				if(window.ActiveXObject) {  
+					xml=new ActiveXObject("Microsoft.XMLDOM");  
+					xml.async=false;  
+					xml.load(url);   
+					return xml;   
+				}  else  {  
+					alert("Загрузка XML не поддерживается браузером");  
+					return null;  
+				}  
+			}
 
-		    xml = xml.responseXML;
+			xml = xml.responseXML;
 
-		    var xmlData = xml.getElementsByTagName('Data');
+			var xmlData = xml.getElementsByTagName('Data');
 
-		    var newXMLitem = $('.result-box .col');
+			var newXMLitem = $('.result-box .col');
 
-		    for (var i = 0;i < xmlData.length;i++) {
-	    		if (newXMLitem[i] == undefined) {
+			for (var i = 0;i < xmlData.length;i++) {
+				if (newXMLitem[i] == undefined) {
 
-	    			$(xmlData[i]).text('');
+					$(xmlData[i]).text('');
 
-	    		} else {
-	    			
-	    			var item = $(newXMLitem[i]).text();
-	    	  		$(xmlData[i]).text(item);
+				} else {
+					
+					var item = $(newXMLitem[i]).text();
+					$(xmlData[i]).text(item);
 
-	    			var strObj = xmlData[i].outerHTML;
+					var strObj = xmlData[i].outerHTML;
 
-	    	  		var testItem = $(newXMLitem[i]).text();
+					var testItem = $(newXMLitem[i]).text();
 
-	    			if (!isNaN(testItem)) { // Переструктурирование XML DOM в зависимости от типа данных в ячейке
+					if (!isNaN(testItem)) { // Переструктурирование XML DOM в зависимости от типа данных в ячейке
 
-	    				xmlData[i].outerHTML = strObj.replace('ss:Type="String"','ss:Type="Number"');
+						xmlData[i].outerHTML = strObj.replace('ss:Type="String"','ss:Type="Number"');
 
-	    			} else if (typeof testItem == typeof "string") {
+					} else if (typeof testItem == typeof "string") {
 
-	    				xmlData[i].outerHTML = strObj.replace('ss:Type="Number"','ss:Type="String"');
+						xmlData[i].outerHTML = strObj.replace('ss:Type="Number"','ss:Type="String"');
 
-	    			}	    			
+					}
 
-	    		}
+				}
 
-		    }
+			}
 
 			var serializer = new XMLSerializer();
 
 			serialized = serializer.serializeToString(xml);
 
-		    $.ajax({
+			$.ajax({
 			  type: "POST",
 			  url: "some.php",
 			  data: "string=" + serialized,
 			  response:"text",
 			  cache:false,
 			  success: function(msg){
-			  	
+			  
 			  }
 			});
 		},
@@ -129,42 +129,42 @@ var convertApp = new Vue({
 
 			function getXML () {
 				if(window.XMLHttpRequest) {  
-			        xml = new window.XMLHttpRequest();  
-			        xml.open("GET", 'upload/workSpace.xml', false);  
-			        xml.send("");  
-			        return xml.responseXML;   
-			    }  
-			    else if(window.ActiveXObject) {  
-		            xml=new ActiveXObject("Microsoft.XMLDOM");  
-		            xml.async=false;  
-		            xml.load(url);   
-		            return xml;   
-			    } else {  
-		            alert("Загрузка XML не поддерживается браузером");  
-		            return null;  
-			    }
+					xml = new window.XMLHttpRequest();  
+					xml.open("GET", 'upload/workSpace.xml', false);  
+					xml.send("");  
+					return xml.responseXML;   
+				}  
+				else if(window.ActiveXObject) {  
+					xml=new ActiveXObject("Microsoft.XMLDOM");  
+					xml.async=false;  
+					xml.load(url);   
+					return xml;   
+				} else {  
+					alert("Загрузка XML не поддерживается браузером");  
+					return null;  
+				}
 			}
-		    
-		    var xml = getXML();
+			
+			var xml = getXML();
 
-	        let allRow = xml.getElementsByTagName('Data');
+			let allRow = xml.getElementsByTagName('Data');
 
-	        this.countColumn = $(xml.getElementsByTagName('Row')[0]).find("Data").length;
+			this.countColumn = $(xml.getElementsByTagName('Row')[0]).find("Data").length;
 
-	        let obj = [];
+			let obj = [];
 
-	        for (var c = 0;c < allRow.length;c++) {
-	        	
-	            var test = Number.isNaN(+$(allRow[c]).text());
+			for (var c = 0;c < allRow.length;c++) {
+				
+				var test = Number.isNaN(+$(allRow[c]).text());
 
-	            if (test) {
+				if (test) {
 
-	                obj.push($(allRow[c]).text());
-	            } else {
-	            	
-	                obj.push(+$(allRow[c]).text());
-	            }
-	        }
+					obj.push($(allRow[c]).text());
+				} else {
+					
+					obj.push(+$(allRow[c]).text());
+				}
+			}
 
 			this.arr = obj;
 		},
@@ -287,8 +287,6 @@ var convertApp = new Vue({
 
 							box[k] = +miniArr[j][k];
 
-
-
 						} else {
 
 							box[k] +=  +miniArr[j][k];
@@ -326,7 +324,6 @@ var convertApp = new Vue({
 			this.widthSpan = 100/this.result[0].length;
 
 			this.procentNew = 100 - ((this.result.length / this.countRowOld ) * 100);
-			
 
 		},
 		createFile: function () {
@@ -337,73 +334,72 @@ var convertApp = new Vue({
 
 			var xml;  //Создание нового файла
 
-		    if(window.XMLHttpRequest) {  
-		        xml=new window.XMLHttpRequest();  
-		        xml.open("GET", 'upload/workSpace.xml', false);  
-		        xml.send("");  		       
-		    }  
-		    else  { 
-		        
-		        if(window.ActiveXObject) {  
-		            xml=new ActiveXObject("Microsoft.XMLDOM");  
-		            xml.async=false;  
-		            xml.load(url);   
-		            return xml;   
-		        }  else  {  
-		            alert("Загрузка XML не поддерживается браузером");  
-		            return null;  
-		        }  
-		    }
+			if(window.XMLHttpRequest) {  
+				xml=new window.XMLHttpRequest();  
+				xml.open("GET", 'upload/workSpace.xml', false);  
+				xml.send("");              
+			}  
+			else  { 
+				
+				if(window.ActiveXObject) {  
+					xml=new ActiveXObject("Microsoft.XMLDOM");  
+					xml.async=false;  
+					xml.load(url);   
+					return xml;   
+				}  else  {  
+					alert("Загрузка XML не поддерживается браузером");  
+					return null;  
+				}  
+			}
 
-		    xml = xml.responseXML;
+			xml = xml.responseXML;
 
-		    var xmlData = xml.getElementsByTagName('Data');
+			var xmlData = xml.getElementsByTagName('Data');
 
-		    var newXMLitem = $('.result span');
+			var newXMLitem = $('.result span');
 
-		    for (var i = 0;i < xmlData.length;i++) {
+			for (var i = 0;i < xmlData.length;i++) {
 
-	    		if (newXMLitem[i] == undefined) {
+				if (newXMLitem[i] == undefined) {
 
-	    			$(xmlData[i]).text('');
+					$(xmlData[i]).text('');
 
-	    		} else {
+				} else {
 
-	    			var item = $(newXMLitem[i]).text().replace(/(^\s*)|(\s*)$/g, '');
+					var item = $(newXMLitem[i]).text().replace(/(^\s*)|(\s*)$/g, '');
 
-	    	  		$(xmlData[i]).text(item);
+					$(xmlData[i]).text(item);
 
-	    			var strObj = xmlData[i].outerHTML;
+					var strObj = xmlData[i].outerHTML;
 
-	    	  		var testItem = $(newXMLitem[i]).text();
+					var testItem = $(newXMLitem[i]).text();
 
-	    			if (!isNaN(testItem)) { // Переструктурирование XML DOM в зависимости от типа данных в ячейке
+					if (!isNaN(testItem)) { // Переструктурирование XML DOM в зависимости от типа данных в ячейке
 
+						xmlData[i].outerHTML = strObj.replace('ss:Type="String"','ss:Type="Number"');
 
-	    				xmlData[i].outerHTML = strObj.replace('ss:Type="String"','ss:Type="Number"');
+					} else if (typeof testItem == typeof "string") {
 
-	    			} else if (typeof testItem == typeof "string") {
+						xmlData[i].outerHTML = strObj.replace('ss:Type="Number"','ss:Type="String"');
 
-	    				xmlData[i].outerHTML = strObj.replace('ss:Type="Number"','ss:Type="String"');
+					}
 
-	    			}	    			
+				}
 
-	    		}
-
-		    }
+			}
 
 			var serializer = new XMLSerializer();
 
 			serialized = serializer.serializeToString(xml);
 
-		    $.ajax({
+			$.ajax({
 			  type: "POST",
 			  url: "some.php",
 			  data: "string=" + serialized,
 			  response:"text",
 			  cache:false,
 			  success: function(msg){
-			  	$(".buttonDown")[0].click();
+				$(".buttonDown")[0].click();
 			  }
 			});
 
@@ -440,34 +436,33 @@ var tableStepOne = new Vue({
 			if (this.files) {
 
 				var data = new FormData();
-		    	$.each( this.files, function( key, value ){
-		        	data.append( key, value );
-		    	});
+				$.each( this.files, function( key, value ){
+					data.append( key, value );
+				});
 
-		    	$.ajax({
-			        url: './submit.php?uploadfiles',
-			        type: 'POST',
-			        data: data,
-			        cache: false,
-			        dataType: 'json',
-			        processData: false, // Не обрабатываем файлы (Don't process the files)
-			        contentType: false, // Так jQuery скажет серверу что это строковой запрос
-			        success: function( respond, textStatus, jqXHR ){
+				$.ajax({
+					url: './submit.php?uploadfiles',
+					type: 'POST',
+					data: data,
+					cache: false,
+					dataType: 'json',
+					processData: false, // Не обрабатываем файлы (Don't process the files)
+					contentType: false, // Так jQuery скажет серверу что это строковой запрос
+					success: function( respond, textStatus, jqXHR ){
 			 
-			            if( typeof respond.error === 'undefined' ){
+						if( typeof respond.error === 'undefined' ){
 
 							tableStepOne.resultAjax = "Успешно загружен";
 
-			            }
-			            else{
-			                console.log('ОШИБКИ ОТВЕТА сервера: ' + respond.error );
-			            }
-			        },
-			        error: function( jqXHR, textStatus, errorThrown ){
-			            console.log('ОШИБКИ AJAX запроса: ' + textStatus );
-			        }
-			    });
-
+						}
+						else{
+							console.log('ОШИБКИ ОТВЕТА сервера: ' + respond.error );
+						}
+					},
+					error: function( jqXHR, textStatus, errorThrown ){
+						console.log('ОШИБКИ AJAX запроса: ' + textStatus );
+					}
+				});
 			}
 			
 		},
