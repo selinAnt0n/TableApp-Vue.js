@@ -2,10 +2,10 @@
   font-family: 'fontello';
   src: url('../fonts/fontello.eot?49559349');
   src: url('../fonts/fontello.eot?49559349#iefix') format('embedded-opentype'),
-       url('../fonts/fontello.woff2?49559349') format('woff2'),
-       url('../fonts/fontello.woff?49559349') format('woff'),
-       url('../fonts/fontello.ttf?49559349') format('truetype'),
-       url('../fonts/fontello.svg?49559349#fontello') format('svg');
+	   url('../fonts/fontello.woff2?49559349') format('woff2'),
+	   url('../fonts/fontello.woff?49559349') format('woff'),
+	   url('../fonts/fontello.ttf?49559349') format('truetype'),
+	   url('../fonts/fontello.svg?49559349#fontello') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -103,58 +103,18 @@ body {
 	background: #eee;
 }
 
-.uploadFile {
-	span {
-		padding: 5px;
-	    border: none;
-	    background: #1f90d8;
-	    display: inline-block;
-	    color: #fff;
-	    font-weight: bold;
-	    text-decoration: none;
-	    cursor: pointer;
-	    margin-bottom: 10px;
-	    border-radius: 4px;
-	    transition: all .3s;
-	    border: 2px solid #000;
-	    position: relative;
-	    cursor: pointer;
-	    input {
-	    	position: absolute;
-	    	top:0;
-	    	left:0;
-	    	height: 100%;
-	    	width: 100%;
-	    	opacity:0;
-	    }
-	}
-	input {
-		background:#000;
-	}
-	a.hide {
-		display: none;
-	}
-	a {
-		text-decoration: none;
-		padding: 5px;
-	}
-	.ajax-respond {
-		font-size: 20px;
-		font-weight: bold;
-	}
 
-}
 
 .hideFile {
 	width: 150px;
-    border: none;
-    border: 2px solid #555;
+	border: none;
+	border: 2px solid #555;
 
-    border-color: #1f90d8;
-    position: relative;
-    background: #1f90d8;
+	border-color: #1f90d8;
+	position: relative;
+	background: #1f90d8;
 
-    transition: all .3s;
+	transition: all .3s;
 	border-radius: 4px;
 	border:2px solid #000;
 	margin-bottom: 10px;
@@ -181,169 +141,154 @@ body {
 }
 
 .result-box {
-		width: 100%;
-		overflow: hidden;
-	}
-	.row {
-		width: 100%;
-		margin-bottom: 20px;
-		display: block;
-		overflow: hidden;
-		border-bottom: 1px solid #000;
-		padding-bottom: 5px;
+	width: 100%;
+	overflow: hidden;
+}
+.row {
+	width: 100%;
+	margin-bottom: 20px;
+	display: block;
+	overflow: hidden;
+	border-bottom: 1px solid #000;
+	padding-bottom: 5px;
 
 
-	}
-	.col {
-		float: left;
-		color:#555;
-		text-align: center;
-		border-right: 1px solid rgba(0,0,0, .2);
-		box-sizing: border-box;
-		padding: 0 5px;
-	}
-	.col:first-of-type {
-		color:#111;
-	}
-	.col:last-of-type {
-		border-right: none;
-	}
-	.counter {
-		width: 300px;
-		padding:11px;
-		border:none;
-		border:2px solid #555;
-		border-radius:3px;
-		border-color:#1f90d8;
-	}
-	.counter:focus {
+}
+.col {
+	float: left;
+	color:#555;
+	text-align: center;
+	border-right: 1px solid rgba(0,0,0, .2);
+	box-sizing: border-box;
+	padding: 0 5px;
+}
+.col:first-of-type {
+	color:#111;
+}
+.col:last-of-type {
+	border-right: none;
+}
+.counter {
+	width: 300px;
+	padding:11px;
+	border:none;
+	border:2px solid #555;
+	border-radius:3px;
+	border-color:#1f90d8;
+}
 
-	}
-	.go {
-		padding: 10px;
-		border:none;
-		background: #1f90d8;
-		color:#fff;
-		font-weight: bold;
-		text-decoration: none;
-		cursor: pointer;
-		border-radius: 4px;
-		transition: all .3s;
-		border:2px solid #000;
 
-	}
+.fileButton {
+	padding:10px;
+}
+.buttonDown {
+	display: block;
+	padding:10px 20px;
+	background: #1f90d8;
+	color:#fff;
+	max-width: 100px;
+	text-align: center;
+	text-decoration: none;
+	font-weight: bold;
+	float: left;
+	transition: all .3s;
+	border-radius: 4px;
+	border:2px solid #000;
+}
+.button {
+	padding:10px 20px;
+	background: #1f90d8;
+	color:#fff;
+	border:none;
+	font-weight: bold;
+	border-radius: 4px;
+	transition: all .3s;
+	border:2px solid #000;
+}
+.rowHolder {
+	display: block;
+	font-weight: normal;
+	margin-bottom: 10px;
 
-	.fileButton {
-		padding:10px;
-	}
-	.buttonDown {
-		display: block;
-		padding:10px 20px;
-		background: #1f90d8;
-		color:#fff;
-		max-width: 100px;
-		text-align: center;
-		text-decoration: none;
-		font-weight: bold;
-		float: left;
-		transition: all .3s;
-		border-radius: 4px;
-		border:2px solid #000;
-	}
-	.button {
-		padding:10px 20px;
-		background: #1f90d8;
-		color:#fff;
-		border:none;
-		font-weight: bold;
-		border-radius: 4px;
-		transition: all .3s;
-		border:2px solid #000;
-	}
-	.rowHolder {
-		display: block;
-		font-weight: normal;
-		margin-bottom: 10px;
+}
+.rowHolder span{
+	font-weight: bold;
+	font-size: 18px;
+}
+.infoButton {
+	font-weight: bold;
+	margin-left: 30px;
+}
+.holder-global {
+	max-width: 1000px;
+	margin:0 auto;
+	position: relative;
+}
+h1 {
+	width:100%;
+	display: block;
+	text-align: center;
+	
+}
+.loader {
+	position: absolute;
+	top:0;
+	right: 0;
+	background: #1f90d8;
+	width: 50px;
+	height: 50px;
+	border-radius: 100%;
 
-	}
-	.rowHolder span{
-		font-weight: bold;
-		font-size: 18px;
-	}
-	.infoButton {
-		font-weight: bold;
-		margin-left: 30px;
-	}
-	.holder-global {
-		max-width: 1000px;
-		margin:0 auto;
-		position: relative;
-	}
-	h1 {
-		width:100%;
-		display: block;
-		text-align: center;
-		
-	}
-	.loader {
-		position: absolute;
-		top:0;
-		right: 0;
-		background: #1f90d8;
-		width: 50px;
-		height: 50px;
-		border-radius: 100%;
+}
 
-	}
+#registNedd,
+#spaceNedd {
+	overflow:hidden; 
+}
+#registNedd input,
+#registNedd label,
+#spaceNedd input,
+#spaceNedd label{
+	cursor: pointer;
+}
+#registNedd input,
+#spaceNedd input{
+	display: none; 
+}
+#registNedd label,
+#spaceNedd label{
+	padding: 5px;
+	border: none;
+	background: #1f90d8;
+	display: inline-block;
+	color: #fff;
+	font-weight: bold;
+	text-decoration: none;
+	cursor: pointer;
+	margin-bottom: 10px;
+	border-radius: 4px;
+	transition: all .3s;
+	border:2px solid #000;
+}
 
-	#registNedd,
-	#spaceNedd {
-		overflow:hidden; 
-	}
-	#registNedd input,
-	#registNedd label,
-	#spaceNedd input,
-	#spaceNedd label{
-		cursor: pointer;
-	}
-	#registNedd input,
-	#spaceNedd input{
-		display: none; 
-	}
-	#registNedd label,
-	#spaceNedd label{
-		padding: 5px;
-		border: none;
-		background: #1f90d8;
-		display: inline-block;
-		color: #fff;
-		font-weight: bold;
-		text-decoration: none;
-		cursor: pointer;
-		margin-bottom: 10px;
-		border-radius: 4px;
-		transition: all .3s;
-		border:2px solid #000;
-	}
+#registNedd input:checked + label,
+#spaceNedd input:checked + label{
+	background: #000;
+}
 
-	#registNedd input:checked + label,
-	#spaceNedd input:checked + label{
-		background: #000;
-	}
-
-	.nextStep {
+.nextStep {
 	float: right;
-    padding: 10px 10px;
-    background: #1f90d8;
-    color: #fff;
-    max-width: 150px;
-    text-align: center;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 4px;
-    transition: all .3s;
-    border:2px solid #000;
-	}
+	padding: 10px 10px;
+	background: #1f90d8;
+	color: #fff;
+	max-width: 150px;
+	text-align: center;
+	text-decoration: none;
+	font-weight: bold;
+	border-radius: 4px;
+	transition: all .3s;
+	border:2px solid #000;
+}
 
 .holderKeyWords {
 	width: 100%;
@@ -369,10 +314,10 @@ body {
 	border: 2px solid #000;
 	font-size: 15px;
 	display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
 
 }
 
@@ -423,15 +368,15 @@ body {
 
 #strictApp .newWord input{
 	padding: 3px;
-    border: none;
-    border: 1px solid #555;
-    border-radius: 3px;
-    margin-bottom: 15px;
-    padding: 7px;
-    border: none;
-    border: 2px solid #555;
-    border-radius: 3px;
-    border-color: #1f90d8;
+	border: none;
+	border: 1px solid #555;
+	border-radius: 3px;
+	margin-bottom: 15px;
+	padding: 7px;
+	border: none;
+	border: 2px solid #555;
+	border-radius: 3px;
+	border-color: #1f90d8;
 
 }
 #strictApp .newWord button{
@@ -449,13 +394,13 @@ body {
 
 .keyWord input {
 	width: 65%;
-    padding: 3px;
-    border: none;
-    border: 1px solid #555;
-    border-radius: 3px;
-    margin-bottom: 15px;
+	padding: 3px;
+	border: none;
+	border: 1px solid #555;
+	border-radius: 3px;
+	margin-bottom: 15px;
 
-    padding:7px;
+	padding:7px;
 	border:none;
 	border:2px solid #555;
 	border-radius:3px;
@@ -464,16 +409,16 @@ body {
 }
 .moreKeyWord {
 	   padding: 5px 10px;
-    border: none;
-    font-size: 16px;
-    background: #1f90d8;
-    color: #fff;
-    font-weight: bold;
-    text-decoration: none;
-    cursor: pointer;
-    margin-bottom: 20px;
-    transition: all .3s;
-    border:2px solid #000;
+	border: none;
+	font-size: 16px;
+	background: #1f90d8;
+	color: #fff;
+	font-weight: bold;
+	text-decoration: none;
+	cursor: pointer;
+	margin-bottom: 20px;
+	transition: all .3s;
+	border:2px solid #000;
 }
 .moreKeyWord:hover,
 .buttonDown:hover,
@@ -483,12 +428,12 @@ body {
 }
 .delWord {
 	padding: 6px;
-    border: none;
-    background: #1f90d8;
-    color: #fff;
-    font-weight: bold;
-    text-decoration: none;
-    cursor: pointer;
+	border: none;
+	background: #1f90d8;
+	color: #fff;
+	font-weight: bold;
+	text-decoration: none;
+	cursor: pointer;
 	float: right;
 	border-radius: 4px;
 	transition: all .3s;
@@ -500,13 +445,13 @@ body {
 
 .globalColum {
 	float: left;
-    width: 100%;
-    box-shadow: 0 0 0px 3px #000 inset;
-    padding: 10px 10px 5px;
-    box-sizing: border-box;
-    margin-bottom: 20px;
-    border-radius: 10px;
-    background: #fff;
+	width: 100%;
+	box-shadow: 0 0 0px 3px #000 inset;
+	padding: 10px 10px 5px;
+	box-sizing: border-box;
+	margin-bottom: 20px;
+	border-radius: 10px;
+	background: #fff;
 }
 #nextStepPage .holder-global {
 	min-width:1500px;
@@ -523,15 +468,15 @@ body {
 	background: #1f90d8;
 }
 .backStep {
-    padding: 10px;
-    border: none;
-    background: #1f90d8;
-    color: #fff;
-    font-weight: bold;
-    text-decoration: none;
-    cursor: pointer;
-    margin-bottom: 20px;
-    border-radius: 4px;
+	padding: 10px;
+	border: none;
+	background: #1f90d8;
+	color: #fff;
+	font-weight: bold;
+	text-decoration: none;
+	cursor: pointer;
+	margin-bottom: 20px;
+	border-radius: 4px;
 
 	transition: all .3s;
 	border:2px solid #000;
@@ -547,9 +492,9 @@ body {
 	z-index: 1000;
 
 	display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
 }
 
 
@@ -571,8 +516,8 @@ body {
 	width: 10px;
 	border-radius: 100%;
 	animation-name: preload;
-    animation-duration: .5s;
-    animation-iteration-count: infinite;
+	animation-duration: .5s;
+	animation-iteration-count: infinite;
 
 }
 
@@ -585,14 +530,14 @@ body {
 	width: 10px;
 	border-radius: 100%;
 	animation-name: preload2;
-    animation-duration: .5s;
-    animation-iteration-count: infinite;
+	animation-duration: .5s;
+	animation-iteration-count: infinite;
 
 }
 
 .nextStep:hover,
 .backStep:hover {
-	background: #1f90d8;
+	background: #000;
 }
 .noSearch:after {
 	content:"Нет совпадений";
@@ -631,14 +576,14 @@ body {
 
 	
 	padding: 5px;
-    border: none;
-    background: #1f90d8;
-    color: #fff;
-    font-weight: bold;
-    text-decoration: none;
-    cursor: pointer;
-    margin-bottom: 20px;
-    border-radius: 4px;
+	border: none;
+	background: #1f90d8;
+	color: #fff;
+	font-weight: bold;
+	text-decoration: none;
+	cursor: pointer;
+	margin-bottom: 20px;
+	border-radius: 4px;
 
 	transition: all .3s;
 	border:2px solid #000;
@@ -656,17 +601,20 @@ body {
 }
 .raido-holder  label{
 	padding: 5px;
-    border: none;
-    background: #1f90d8;
-    color: #fff;
-    font-weight: bold;
-    text-decoration: none;
-    cursor: pointer;
-    margin-bottom: 20px;
-    border-radius: 4px;
+	border: none;
+	background: #1f90d8;
+	color: #fff;
+	font-weight: bold;
+	text-decoration: none;
+	cursor: pointer;
+	margin-bottom: 20px;
+	border-radius: 4px;
 
 	transition: all .3s;
 	border:2px solid #000;
+	&:hover {
+		background:#000;
+	}
 
 }
 .raido-holder  input:checked + label{
@@ -706,19 +654,19 @@ body {
 	.task2 {
 		float: left;
 		padding: 20px;
-   		border-radius: 10px;
-    	border: 2px solid #000;
-    	background: #fff;
-    	margin-left: 30px;
-    	margin-right: 30px;
-    	width: 400px;
-    	h4 {
-    	    text-align: center;
-    		font-size: 20px;
-    	}
-    	.newCity,
-    	.addTemp-holder {
-    		input {
+		border-radius: 10px;
+		border: 2px solid #000;
+		background: #fff;
+		margin-left: 30px;
+		margin-right: 30px;
+		width: 400px;
+		h4 {
+			text-align: center;
+			font-size: 20px;
+		}
+		.newCity,
+		.addTemp-holder {
+			input {
 				padding: 3px;
 				border: none;
 				border: 1px solid #555;
@@ -729,8 +677,8 @@ body {
 				border: 2px solid #555;
 				border-radius: 3px;
 				border-color: #1f90d8;
-    		}
-    		button {
+			}
+			button {
 				padding: 6px;
 				border: none;
 				border: 2px solid #555;
@@ -740,19 +688,23 @@ body {
 				color: #fff;
 				border: 2px solid #000;
 				cursor: pointer;
-    		}
-    		strong {
-    			display: block;
-    		}
-    		.addTemp {
-    			margin-top: 20px;
-    			display: block;
-    			float: right;
-    			margin-bottom: 20px;
-    		}
+				transition:all .4s;
+				&:hover {
+					background:#000;
+				}
+			}
+			strong {
+				display: block;
+			}
+			.addTemp {
+				margin-top: 20px;
+				display: block;
+				float: right;
+				margin-bottom: 20px;
+			}
 
-    	}
-    	ul {
+		}
+		ul {
 			padding: 0;
 			margin: 0;
 			list-style: none;
@@ -777,6 +729,10 @@ body {
 					color: #fff;
 					border: 2px solid #000;
 					cursor: pointer;
+					transition:all .4s;
+					&:hover {
+						background:#000;
+					}
 				}
 			}
 		}
@@ -790,9 +746,9 @@ body {
 					cursor: crosshair;
 
 					display: inline-flex;
-				    flex-direction: row;
-				    justify-content: left;
-				    align-items: center;
+					flex-direction: row;
+					justify-content: left;
+					align-items: center;
 
 				}
 				> div {
@@ -830,14 +786,14 @@ body {
 
 		> button {
 			padding: 6px;
-		    border: none;
-		    border: 2px solid #555;
-		    border-radius: 3px;
-		    border-color: #1f90d8;
-		    background: #1f90d8;
-		    color: #fff;
-		    border: 2px solid #000;
-		    cursor: pointer;
+			border: none;
+			border: 2px solid #555;
+			border-radius: 3px;
+			border-color: #1f90d8;
+			background: #1f90d8;
+			color: #fff;
+			border: 2px solid #000;
+			cursor: pointer;
 		}
 		.allWords {
 			width: 100%;
@@ -923,9 +879,9 @@ body {
 	margin-bottom: 10px;
 	padding-bottom: 10px;
 	display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
 }
 .result li span{
 	padding:0 5px;
@@ -962,6 +918,10 @@ body {
 			left:0;
 			cursor: pointer;
 			border-radius: 4px;
+
+		}
+		input:hover ~ button{
+			background:#000;
 		}
 		button {
 			width: 100%;
@@ -988,6 +948,7 @@ body {
 			border-radius: 4px;
 			transition: all .3s;
 			border: 2px solid #000;
+			
 		}
 	}
 }
@@ -1007,6 +968,9 @@ body {
 		transition: all .3s;
 		border: 2px solid #000;
 		outline: none;
+		&:hover {
+			background:#000;
+		}
 	}
 	.active {
 		background:#000;

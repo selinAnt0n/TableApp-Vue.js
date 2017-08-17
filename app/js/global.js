@@ -29,71 +29,71 @@ var convertApp = new Vue({
 
 			var xml;  //Создание нового файла
 
-		    if(window.XMLHttpRequest) {  
-		        xml=new window.XMLHttpRequest();  
-		        xml.open("GET", 'upload/workSpace.xml', false);  
-		        xml.send("");  		       
-		    } 
+			if(window.XMLHttpRequest) {  
+				xml=new window.XMLHttpRequest();  
+				xml.open("GET", 'upload/workSpace.xml', false);  
+				xml.send("");              
+			} 
 
-		    else  { 
-		        
-		        if(window.ActiveXObject) {  
-		            xml=new ActiveXObject("Microsoft.XMLDOM");  
-		            xml.async=false;  
-		            xml.load(url);   
-		            return xml;   
-		        }  else  {  
-		            alert("Загрузка XML не поддерживается браузером");  
-		            return null;  
-		        }  
-		    }
+			else  { 
+				
+				if(window.ActiveXObject) {  
+					xml=new ActiveXObject("Microsoft.XMLDOM");  
+					xml.async=false;  
+					xml.load(url);   
+					return xml;   
+				}  else  {  
+					alert("Загрузка XML не поддерживается браузером");  
+					return null;  
+				}  
+			}
 
-		    xml = xml.responseXML;
+			xml = xml.responseXML;
 
-		    var xmlData = xml.getElementsByTagName('Data');
+			var xmlData = xml.getElementsByTagName('Data');
 
-		    var newXMLitem = $('.result-box .col');
+			var newXMLitem = $('.result-box .col');
 
-		    for (var i = 0;i < xmlData.length;i++) {
-	    		if (newXMLitem[i] == undefined) {
+			for (var i = 0;i < xmlData.length;i++) {
+				if (newXMLitem[i] == undefined) {
 
-	    			$(xmlData[i]).text('');
+					$(xmlData[i]).text('');
 
-	    		} else {
-	    			
-	    			var item = $(newXMLitem[i]).text();
-	    	  		$(xmlData[i]).text(item);
+				} else {
+					
+					var item = $(newXMLitem[i]).text();
+					$(xmlData[i]).text(item);
 
-	    			var strObj = xmlData[i].outerHTML;
+					var strObj = xmlData[i].outerHTML;
 
-	    	  		var testItem = $(newXMLitem[i]).text();
+					var testItem = $(newXMLitem[i]).text();
 
-	    			if (!isNaN(testItem)) { // Переструктурирование XML DOM в зависимости от типа данных в ячейке
+					if (!isNaN(testItem)) { // Переструктурирование XML DOM в зависимости от типа данных в ячейке
 
-	    				xmlData[i].outerHTML = strObj.replace('ss:Type="String"','ss:Type="Number"');
+						xmlData[i].outerHTML = strObj.replace('ss:Type="String"','ss:Type="Number"');
 
-	    			} else if (typeof testItem == typeof "string") {
+					} else if (typeof testItem == typeof "string") {
 
-	    				xmlData[i].outerHTML = strObj.replace('ss:Type="Number"','ss:Type="String"');
+						xmlData[i].outerHTML = strObj.replace('ss:Type="Number"','ss:Type="String"');
 
-	    			}	    			
+					}
 
-	    		}
+				}
 
-		    }
+			}
 
 			var serializer = new XMLSerializer();
 
 			serialized = serializer.serializeToString(xml);
 
-		    $.ajax({
+			$.ajax({
 			  type: "POST",
 			  url: "some.php",
 			  data: "string=" + serialized,
 			  response:"text",
 			  cache:false,
 			  success: function(msg){
-			  	
+			  
 			  }
 			});
 		},
@@ -129,42 +129,42 @@ var convertApp = new Vue({
 
 			function getXML () {
 				if(window.XMLHttpRequest) {  
-			        xml = new window.XMLHttpRequest();  
-			        xml.open("GET", 'upload/workSpace.xml', false);  
-			        xml.send("");  
-			        return xml.responseXML;   
-			    }  
-			    else if(window.ActiveXObject) {  
-		            xml=new ActiveXObject("Microsoft.XMLDOM");  
-		            xml.async=false;  
-		            xml.load(url);   
-		            return xml;   
-			    } else {  
-		            alert("Загрузка XML не поддерживается браузером");  
-		            return null;  
-			    }
+					xml = new window.XMLHttpRequest();  
+					xml.open("GET", 'upload/workSpace.xml', false);  
+					xml.send("");  
+					return xml.responseXML;   
+				}  
+				else if(window.ActiveXObject) {  
+					xml=new ActiveXObject("Microsoft.XMLDOM");  
+					xml.async=false;  
+					xml.load(url);   
+					return xml;   
+				} else {  
+					alert("Загрузка XML не поддерживается браузером");  
+					return null;  
+				}
 			}
-		    
-		    var xml = getXML();
+			
+			var xml = getXML();
 
-	        let allRow = xml.getElementsByTagName('Data');
+			let allRow = xml.getElementsByTagName('Data');
 
-	        this.countColumn = $(xml.getElementsByTagName('Row')[0]).find("Data").length;
+			this.countColumn = $(xml.getElementsByTagName('Row')[0]).find("Data").length;
 
-	        let obj = [];
+			let obj = [];
 
-	        for (var c = 0;c < allRow.length;c++) {
-	        	
-	            var test = Number.isNaN(+$(allRow[c]).text());
+			for (var c = 0;c < allRow.length;c++) {
+				
+				var test = Number.isNaN(+$(allRow[c]).text());
 
-	            if (test) {
+				if (test) {
 
-	                obj.push($(allRow[c]).text());
-	            } else {
-	            	
-	                obj.push(+$(allRow[c]).text());
-	            }
-	        }
+					obj.push($(allRow[c]).text());
+				} else {
+					
+					obj.push(+$(allRow[c]).text());
+				}
+			}
 
 			this.arr = obj;
 		},
@@ -287,8 +287,6 @@ var convertApp = new Vue({
 
 							box[k] = +miniArr[j][k];
 
-
-
 						} else {
 
 							box[k] +=  +miniArr[j][k];
@@ -326,7 +324,6 @@ var convertApp = new Vue({
 			this.widthSpan = 100/this.result[0].length;
 
 			this.procentNew = 100 - ((this.result.length / this.countRowOld ) * 100);
-			
 
 		},
 		createFile: function () {
@@ -337,73 +334,72 @@ var convertApp = new Vue({
 
 			var xml;  //Создание нового файла
 
-		    if(window.XMLHttpRequest) {  
-		        xml=new window.XMLHttpRequest();  
-		        xml.open("GET", 'upload/workSpace.xml', false);  
-		        xml.send("");  		       
-		    }  
-		    else  { 
-		        
-		        if(window.ActiveXObject) {  
-		            xml=new ActiveXObject("Microsoft.XMLDOM");  
-		            xml.async=false;  
-		            xml.load(url);   
-		            return xml;   
-		        }  else  {  
-		            alert("Загрузка XML не поддерживается браузером");  
-		            return null;  
-		        }  
-		    }
+			if(window.XMLHttpRequest) {  
+				xml=new window.XMLHttpRequest();  
+				xml.open("GET", 'upload/workSpace.xml', false);  
+				xml.send("");              
+			}  
+			else  { 
+				
+				if(window.ActiveXObject) {  
+					xml=new ActiveXObject("Microsoft.XMLDOM");  
+					xml.async=false;  
+					xml.load(url);   
+					return xml;   
+				}  else  {  
+					alert("Загрузка XML не поддерживается браузером");  
+					return null;  
+				}  
+			}
 
-		    xml = xml.responseXML;
+			xml = xml.responseXML;
 
-		    var xmlData = xml.getElementsByTagName('Data');
+			var xmlData = xml.getElementsByTagName('Data');
 
-		    var newXMLitem = $('.result span');
+			var newXMLitem = $('.result span');
 
-		    for (var i = 0;i < xmlData.length;i++) {
+			for (var i = 0;i < xmlData.length;i++) {
 
-	    		if (newXMLitem[i] == undefined) {
+				if (newXMLitem[i] == undefined) {
 
-	    			$(xmlData[i]).text('');
+					$(xmlData[i]).text('');
 
-	    		} else {
+				} else {
 
-	    			var item = $(newXMLitem[i]).text().replace(/(^\s*)|(\s*)$/g, '');
+					var item = $(newXMLitem[i]).text().replace(/(^\s*)|(\s*)$/g, '');
 
-	    	  		$(xmlData[i]).text(item);
+					$(xmlData[i]).text(item);
 
-	    			var strObj = xmlData[i].outerHTML;
+					var strObj = xmlData[i].outerHTML;
 
-	    	  		var testItem = $(newXMLitem[i]).text();
+					var testItem = $(newXMLitem[i]).text();
 
-	    			if (!isNaN(testItem)) { // Переструктурирование XML DOM в зависимости от типа данных в ячейке
+					if (!isNaN(testItem)) { // Переструктурирование XML DOM в зависимости от типа данных в ячейке
 
+						xmlData[i].outerHTML = strObj.replace('ss:Type="String"','ss:Type="Number"');
 
-	    				xmlData[i].outerHTML = strObj.replace('ss:Type="String"','ss:Type="Number"');
+					} else if (typeof testItem == typeof "string") {
 
-	    			} else if (typeof testItem == typeof "string") {
+						xmlData[i].outerHTML = strObj.replace('ss:Type="Number"','ss:Type="String"');
 
-	    				xmlData[i].outerHTML = strObj.replace('ss:Type="Number"','ss:Type="String"');
+					}
 
-	    			}	    			
+				}
 
-	    		}
-
-		    }
+			}
 
 			var serializer = new XMLSerializer();
 
 			serialized = serializer.serializeToString(xml);
 
-		    $.ajax({
+			$.ajax({
 			  type: "POST",
 			  url: "some.php",
 			  data: "string=" + serialized,
 			  response:"text",
 			  cache:false,
 			  success: function(msg){
-			  	$(".buttonDown")[0].click();
+				$(".buttonDown")[0].click();
 			  }
 			});
 
@@ -440,41 +436,43 @@ var tableStepOne = new Vue({
 			if (this.files) {
 
 				var data = new FormData();
-		    	$.each( this.files, function( key, value ){
-		        	data.append( key, value );
-		    	});
+				$.each( this.files, function( key, value ){
+					data.append( key, value );
+				});
 
-		    	$.ajax({
-			        url: './submit.php?uploadfiles',
-			        type: 'POST',
-			        data: data,
-			        cache: false,
-			        dataType: 'json',
-			        processData: false, // Не обрабатываем файлы (Don't process the files)
-			        contentType: false, // Так jQuery скажет серверу что это строковой запрос
-			        success: function( respond, textStatus, jqXHR ){
+				$.ajax({
+					url: './submit.php?uploadfiles',
+					type: 'POST',
+					data: data,
+					cache: false,
+					dataType: 'json',
+					processData: false, // Не обрабатываем файлы (Don't process the files)
+					contentType: false, // Так jQuery скажет серверу что это строковой запрос
+					success: function( respond, textStatus, jqXHR ){
 			 
-			            if( typeof respond.error === 'undefined' ){
+						if( typeof respond.error === 'undefined' ){
 
 							tableStepOne.resultAjax = "Успешно загружен";
 
-			            }
-			            else{
-			                console.log('ОШИБКИ ОТВЕТА сервера: ' + respond.error );
-			            }
-			        },
-			        error: function( jqXHR, textStatus, errorThrown ){
-			            console.log('ОШИБКИ AJAX запроса: ' + textStatus );
-			        }
-			    });
-
+						}
+						else{
+							console.log('ОШИБКИ ОТВЕТА сервера: ' + respond.error );
+						}
+					},
+					error: function( jqXHR, textStatus, errorThrown ){
+						console.log('ОШИБКИ AJAX запроса: ' + textStatus );
+					}
+				});
 			}
 			
 		},
 	}
 });
 
-var strictApp = new Vue({
+var strictApp = new Vue({ 
+			// ============================
+			// Strict APP
+			// ============================
 	el:"#strictApp",
 	data: {
 		words:["в","на","под"],
@@ -494,7 +492,11 @@ var strictApp = new Vue({
 
 var arrWords = strictApp.words;
 
+
 var createTask = new Vue({
+			// ============================
+			// Create tast APP
+			// ============================
 	el:"#createTask",
 	data: {
 		citys:[
@@ -514,8 +516,6 @@ var createTask = new Vue({
 		],
 		textCity:"",
 		choseCitys:[],
-
-
 		templates:[
 			{
 				name:"Шаблон 1",
@@ -549,31 +549,31 @@ var createTask = new Vue({
 		arr:[],
 	},
 	created: function () {
-								
+
 		var arr = [];
 
 		var xml = this.getXMLDocument('upload/workSpace.xml');
 
-	    var allRow2 = xml.getElementsByTagName('Row');
+		var allRow2 = xml.getElementsByTagName('Row');
 
-	    var xml = this.getXMLDocument('upload/workSpace.xml');
+		var xml = this.getXMLDocument('upload/workSpace.xml');
 
-	    var allRow = xml.getElementsByTagName('Data');
+		var allRow = xml.getElementsByTagName('Data');
 
-	    var obj = [];
+		var obj = [];
 
-	    for (var c = 0;c < allRow.length;c++) {
-	    	
-	        var test = Number.isNaN(+$(allRow[c]).text());
+		for (var c = 0;c < allRow.length;c++) {
+			
+			var test = Number.isNaN(+$(allRow[c]).text());
 
-	        if (test) {
+			if (test) {
 
-	            obj.push($(allRow[c]).text());
-	        } else {
-	        	
-	            obj.push(+$(allRow[c]).text());
-	        }
-	    }
+				obj.push($(allRow[c]).text());
+			} else {
+
+				obj.push(+$(allRow[c]).text());
+			}
+		}
 
 		this.arr = obj;
 
@@ -583,24 +583,24 @@ var createTask = new Vue({
 		getXMLDocument: function (url) {
 			var xml; 
 
-		    if(window.XMLHttpRequest)  {  
-		        xml = new window.XMLHttpRequest();  
-		        xml.open("GET", url, false);  
-		        xml.send("");  
-		        return xml.responseXML;  
-		       
-		    }  else  {
-		        
-		        if(window.ActiveXObject) {  
-		            xml=new ActiveXObject("Microsoft.XMLDOM");  
-		            xml.async=false;  
-		            xml.load(url);   
-		            return xml;   
-		        }  else  {  
-		            alert("Загрузка XML не поддерживается браузером");  
-		            return null;  
-		        }  
-		    }
+			if(window.XMLHttpRequest)  {
+				xml = new window.XMLHttpRequest();
+				xml.open("GET", url, false);
+				xml.send("");  
+				return xml.responseXML;
+			   
+			}  else  {
+				
+				if(window.ActiveXObject) {
+					xml=new ActiveXObject("Microsoft.XMLDOM");
+					xml.async=false;
+					xml.load(url);
+					return xml;
+				}  else  {
+					alert("Загрузка XML не поддерживается браузером");
+					return null;
+				}  
+			}
 		},
 		parseArr: function (arrXml,count) {
 			var globalArr = [];
@@ -623,7 +623,6 @@ var createTask = new Vue({
 			this.arr = [];
 
 			this.arr = globalArr;
-
 		},
 		useFile1: function () {
 
@@ -631,7 +630,7 @@ var createTask = new Vue({
 			this.convertFile = false;
 
 			var xml = this.getXMLDocument('upload/workSpace.xml');
-			this.getXml(xml);	
+			this.getXml(xml);
 		},
 		useFile2: function () {
 
@@ -646,41 +645,40 @@ var createTask = new Vue({
 			var allRow2 = xml.getElementsByTagName('Row');
 
 
-	        if (this.downloadFile) {
+			if (this.downloadFile) {
 
 				var xml = this.getXMLDocument('upload/workSpace.xml');
 
 			} else {
-				
+
 				var xml = this.getXMLDocument('convertBox/convertVersion.xml');
 
 			}
 
-	        var allRow = xml.getElementsByTagName('Data');
+			var allRow = xml.getElementsByTagName('Data');
 
-	        var obj = [];
+			var obj = [];
 
-	        for (var c = 0;c < allRow.length;c++) {
-	        	
-	            var test = Number.isNaN(+$(allRow[c]).text());
+			for (var c = 0;c < allRow.length;c++) {
+				
+				var test = Number.isNaN(+$(allRow[c]).text());
 
-	            if (test) {
+				if (test) {
 
-	                obj.push($(allRow[c]).text());
-	            } else {
-	            	
-	                obj.push(+$(allRow[c]).text());
-	            }
-	        }
+					obj.push($(allRow[c]).text());
+				} else {
+
+					obj.push(+$(allRow[c]).text());
+				}
+			}
 
 			this.arr = obj;
 
 			this.parseArr(this.arr,$(allRow2[0]).find( "Data" ).length);
-
 		},
 		choseCity: function (city,index) {
 
-			city.flag = !city.flag; 
+			city.flag = !city.flag;
 
 			if (city.flag) {
 				this.choseCitys.push(city.name);
@@ -691,8 +689,7 @@ var createTask = new Vue({
 						this.choseCitys.splice(i,1);
 					}
 				}
-			}	
-
+			}
 		},
 		choseTemp: function (temp,index) {
 
@@ -709,7 +706,6 @@ var createTask = new Vue({
 					}
 				}
 			}
-
 		},
 		addCity: function () {
 			this.citys.push({
@@ -724,7 +720,6 @@ var createTask = new Vue({
 		removeNewWord: function(index) {
 
 			this.newWords.splice(index,1);
-			
 		},
 		addTempl: function () {
 
@@ -749,6 +744,9 @@ var createTask = new Vue({
 });
 
 var workBox = new Vue({
+			// ============================
+			// Search APP
+			// ============================
 	el:"#workBoxesApp",
 	data: {
 		countWords:0,
@@ -761,12 +759,6 @@ var workBox = new Vue({
 	methods:{
 		createBoxes:function () {
 			this.words = [];
-
-			// this.countBoxes = createTask.choseTemps.length;
-
-			// if ( createTask.choseCitys.length ) {
-			// 	this.countBoxes *= createTask.choseCitys.length;
-			// }
 
 			this.city = createTask.choseCitys;
 
@@ -850,7 +842,7 @@ var workBox = new Vue({
 						result.push(arr[i].data ,this.city[j] );
 
 					}
-					
+
 				}
 
 				for (var k =0;k < result.length;k=k+2) {
@@ -871,7 +863,6 @@ var workBox = new Vue({
 				this.messege = "Выберите Город/Шаблон";
 
 			}
-
 		},
 		useStrict: function (item,index) {
 			
@@ -889,14 +880,14 @@ var workBox = new Vue({
 
 			var allWord = item.data;
 
-			if (item.strictFlag) {					
+			if (item.strictFlag) {
 
 				globalCount = allWord.length;
 
 				for (var i = 0;i < arr.length;i++) {
 
 					let str =  arr[i][0];
-					
+
 					if (str == 0) {
 
 						return console.warn("конец таблицы !");
@@ -911,7 +902,7 @@ var workBox = new Vue({
 
 					for (var j = 0;j < globalCount;j++) {
 
-						var searStr = allWord[j];										
+						var searStr = allWord[j];
 						searStr = searStr.toLowerCase();
 
 
@@ -929,7 +920,7 @@ var workBox = new Vue({
 
 					for (var c =0;c < reCreateArr.length;c++) {
 
-						
+
 						if (reCreateArr[c] == "" || reCreateArr[c] == " ") {
 							reCreateArr.splice(c,1);
 						}
@@ -939,9 +930,9 @@ var workBox = new Vue({
 					for (var t = 0;t < reCreateArr.length;t++) {
 						for (var k = 0;k < arrWords.length;k++) {
 							if (reCreateArr[t] == arrWords[k] ) {
-								
+
 								strictCount++;
-								
+
 							}
 						}
 					}
@@ -1000,7 +991,7 @@ var workBox = new Vue({
 					}
 
 					if (globalCount == innerCount) {
-					
+
 						if (!globalArr.length) {
 							item.searchEmpty = true;
 						}
@@ -1018,7 +1009,7 @@ var workBox = new Vue({
 
 				}
 			} else {
-					
+
 				globalCount = allWord.length;
 
 				for (var i = 0;i < arr.length;i++) {

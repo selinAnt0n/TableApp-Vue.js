@@ -230,43 +230,6 @@ body {
 .body-color2 {
   background: #eee; }
 
-.uploadFile span {
-  padding: 5px;
-  border: none;
-  background: #1f90d8;
-  display: inline-block;
-  color: #fff;
-  font-weight: bold;
-  text-decoration: none;
-  cursor: pointer;
-  margin-bottom: 10px;
-  border-radius: 4px;
-  transition: all .3s;
-  border: 2px solid #000;
-  position: relative;
-  cursor: pointer; }
-  .uploadFile span input {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    opacity: 0; }
-
-.uploadFile input {
-  background: #000; }
-
-.uploadFile a.hide {
-  display: none; }
-
-.uploadFile a {
-  text-decoration: none;
-  padding: 5px; }
-
-.uploadFile .ajax-respond {
-  font-size: 20px;
-  font-weight: bold; }
-
 .hideFile {
   width: 150px;
   border: none;
@@ -332,18 +295,6 @@ body {
   border: 2px solid #555;
   border-radius: 3px;
   border-color: #1f90d8; }
-
-.go {
-  padding: 10px;
-  border: none;
-  background: #1f90d8;
-  color: #fff;
-  font-weight: bold;
-  text-decoration: none;
-  cursor: pointer;
-  border-radius: 4px;
-  transition: all .3s;
-  border: 2px solid #000; }
 
 .fileButton {
   padding: 10px; }
@@ -674,7 +625,7 @@ h1 {
 
 .nextStep:hover,
 .backStep:hover {
-  background: #1f90d8; }
+  background: #000; }
 
 .noSearch:after {
   content: "Нет совпадений";
@@ -771,6 +722,8 @@ h1 {
   border-radius: 4px;
   transition: all .3s;
   border: 2px solid #000; }
+  .raido-holder label:hover {
+    background: #000; }
 
 .raido-holder input:checked + label {
   background: #000; }
@@ -838,7 +791,13 @@ h1 {
       background: #1f90d8;
       color: #fff;
       border: 2px solid #000;
-      cursor: pointer; }
+      cursor: pointer;
+      transition: all .4s; }
+      #createTask .task1 .newCity button:hover,
+      #createTask .task1 .addTemp-holder button:hover,
+      #createTask .task2 .newCity button:hover,
+      #createTask .task2 .addTemp-holder button:hover {
+        background: #000; }
     #createTask .task1 .newCity strong,
     #createTask .task1 .addTemp-holder strong,
     #createTask .task2 .newCity strong,
@@ -879,7 +838,11 @@ h1 {
           background: #1f90d8;
           color: #fff;
           border: 2px solid #000;
-          cursor: pointer; }
+          cursor: pointer;
+          transition: all .4s; }
+          #createTask .task1 ul li button:hover,
+          #createTask .task2 ul li button:hover {
+            background: #000; }
     #createTask .task1 .allTempls li span,
     #createTask .task2 .allTempls li span {
       float: left;
@@ -1034,6 +997,8 @@ h1 {
       left: 0;
       cursor: pointer;
       border-radius: 4px; }
+    #uploadFile > span input:hover ~ button {
+      background: #000; }
     #uploadFile > span button {
       width: 100%;
       height: 50px;
@@ -1076,6 +1041,8 @@ h1 {
     transition: all .3s;
     border: 2px solid #000;
     outline: none; }
+    #convertApp button:hover {
+      background: #000; }
   #convertApp .active {
     background: #000; }
   #convertApp .Start {

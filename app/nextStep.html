@@ -11,7 +11,7 @@
 	<script src="js/vue.js"></script>
 
 	<script>
-		
+
 		$(".preloadHide").addClass(".preloadHide-active");
 
 	</script>
@@ -19,6 +19,12 @@
 	<link rel="stylesheet" href="css/global.css">
 
 </head>
+
+
+
+
+
+
 <body id="nextStepPage">
 
 
@@ -32,12 +38,12 @@
 	<div class="holder-global">
 
 			<a href="http://prabu.ru/test4/" class="backStep">К предыдущему шагу</a>
-		
+
 			<div id="createTask">
-				
+
 				<div class="raido-holder">
 					<h4>С каким файлом взаимодествовать ?</h4>
-					
+
 					<input checked type="radio" name="radioTeam" id="uploadFileMet"  v-on:click="useFile1()">
 					<label for="uploadFileMet">Загруженый</label>
 
@@ -71,7 +77,7 @@
 						<input type="text" v-model="nameTemp">
 
 						<strong>Слова шаблона</strong>
-						
+
 						<div class="tempWords" v-for="(newWord,index) in newWords">
 							<input type="text" v-model="newWord.text">	
 
@@ -87,22 +93,25 @@
 
 						<ul>
 							<li v-for="(temp,index) in templates" >
-								<span v-on:mouseover="hoverTampl(temp)" v-on:mouseout="hoverTamplOut(temp)">{{ temp.name }}</span>
+								<!-- <span v-on:mouseover="hoverTampl(temp)" v-on:mouseout="hoverTamplOut(temp)">{{ temp.name }}</span> -->
+
+								<span >{{ temp.name }}</span>
 
 								<button v-on:click="choseTemp(temp,index)"  class="icon_plus" v-bind:class="{icon_cancel1: temp.flag}"></button>
 
-								<transition name="fade">
-									<div v-if="temp.visible">
-									
+
+									<!-- <div v-if="temp.visible"> -->
+									<div >
+
 										{{ temp.data }}
 
 									</div>
-								</transition>
+
 
 							</li>
 							<span>{{ choseTemps }}</span>
 						</ul>
-						
+
 					</div>
 
 				</div>
@@ -112,13 +121,13 @@
 			<div id="workBoxesApp">
 
 				{{words}}
-				
+
 				<button class="icon_down_open_big createButton" v-on:click="createBoxes()"></button>
 
 				<transition name="fade">
 					<span class="dangerMessege" v-if="messege">{{messege}}</span>
 				</transition>
-				
+
 				<div class="workbox"  v-for="(box,index) in words">
 
 						<button v-on:click="useExceptions(box,index)" v-bind:class="{activeStrict: box.useExceptions}">Режим Исключение данных слова</button>
@@ -126,19 +135,20 @@
 						<transition name="fade">
 							<button v-on:click="useStrict(box,index)" v-if="box.strictShow" v-bind:class="{activeStrict: box.strictFlag}">Использовать Strict Моде</button>
 						</transition>
+
 					<br>
 					<br>
 					<button v-on:click="startSearch(box,index)">Поиск</button>
 
 					<div class="allWords" v-for="(word,index) in box.data">
-					
+
 						<input type="text" v-bind:value="word" disabled>
 						<button class="icon_cancel1" v-on:click="deleteWord(box,word,index)"></button>
 
 					</div>
-					
+
 					<div class="resultTable">
-						
+
 						<span v-if="box.result.length" v-show="!box.searchEmpty">
 							{{box.result}}
 						</span>
@@ -147,7 +157,7 @@
 							Нет совпадений
 						</span>
 					</div>
-					
+
 				</div>
 			</div>
 
@@ -162,7 +172,7 @@
 					<input type="text" v-model="text">
 					<button v-on:click="addWord">Добавить новое слово</button>
 				</div>
-				
+
 				<ul>
 					<li v-for="(word,index) in words">{{index + 1}}. {{ word }} <button v-on:click="delWord(word,index)" class="icon_cancel"></button></li>
 				</ul>
@@ -170,7 +180,7 @@
 			</div>
 
 			<script>
-				
+
 				var button = document.querySelector('.strictApp-Button');
 
 				button.onclick = function () {
@@ -185,13 +195,13 @@
 
 	</div>
 
-	<script src="js/global.js"></script>	
+	<script src="js/global.js"></script>
 
 
 	<script>
 
 		setTimeout(function () { $("#preloader-holder").remove(); },1200);
-		
+
 	</script>
 
 
