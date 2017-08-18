@@ -71,10 +71,8 @@ var createTask = new Vue({
 		countHolder:1,
 		visible:false,
 		showBox:false,
-
 		downloadFile:true,
 		convertFile:false,
-
 		arr:[],
 	},
 	created: function () {
@@ -117,9 +115,9 @@ var createTask = new Vue({
 				xml.open("GET", url, false);
 				xml.send("");  
 				return xml.responseXML;
-			   
+
 			}  else  {
-				
+
 				if(window.ActiveXObject) {
 					xml=new ActiveXObject("Microsoft.XMLDOM");
 					xml.async=false;
@@ -128,7 +126,7 @@ var createTask = new Vue({
 				}  else  {
 					alert("Загрузка XML не поддерживается браузером");
 					return null;
-				}  
+				}
 			}
 		},
 		parseArr: function (arrXml,count) {
@@ -143,7 +141,7 @@ var createTask = new Vue({
 				globalArr[i] = new Array();
 
 				for (var j = 0;j < count;j++) {
-			
+
 					globalArr[i][j] = arrXml[(i*count)+j];
 
 				}
@@ -284,7 +282,6 @@ var workBox = new Vue({
 		resultSearch:[],
 		messege:"",
 	},
-	
 	methods:{
 		createBoxes:function () {
 			this.words = [];
@@ -344,12 +341,9 @@ var workBox = new Vue({
 					let it = result[k];
 
 					it.strict = false;
-					
 					let dataItem =  {};
 					dataItem.data = [];
-
 					dataItem.data.push(it);
-
 					dataItem.result = [];
 					dataItem.strictFlag = false;
 					dataItem.searchEmpty = false;
@@ -512,7 +506,6 @@ var workBox = new Vue({
 
 						if ( str.indexOf(searStr,0) >= 0) {
 
-							console.log(str.indexOf(searStr,0) >= 0);
 							innerCount++;
 
 						}
@@ -533,7 +526,7 @@ var workBox = new Vue({
 						item.countFind = item.countFind + 1;
 
 						this.mathSTR(globalArr,index,item);
-						
+
 					}
 
 				}

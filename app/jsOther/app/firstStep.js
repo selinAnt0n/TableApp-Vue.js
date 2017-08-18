@@ -1,3 +1,4 @@
+console.log("Welcome to Table App v.1.1   https://github.com/selinAnt0n/TableApp-Vue.js")
 var convertApp = new Vue({
 	el:"#convertApp",
 	data: {
@@ -11,7 +12,6 @@ var convertApp = new Vue({
 		spaceNeed:false,
 		result:[],
 		widthSpan: 0,
-
 	},
 	methods: {
 		startConvert: function () {
@@ -128,19 +128,19 @@ var convertApp = new Vue({
 			var xml;
 
 			function getXML () {
-				if(window.XMLHttpRequest) {  
-					xml = new window.XMLHttpRequest();  
-					xml.open("GET", 'upload/workSpace.xml', false);  
-					xml.send("");  
-					return xml.responseXML;   
-				}  
-				else if(window.ActiveXObject) {  
-					xml=new ActiveXObject("Microsoft.XMLDOM");  
-					xml.async=false;  
-					xml.load(url);   
-					return xml;   
+				if(window.XMLHttpRequest) {
+					xml = new window.XMLHttpRequest();
+					xml.open("GET", 'upload/workSpace.xml', false);
+					xml.send("");
+					return xml.responseXML;
+				}
+				else if(window.ActiveXObject) {
+					xml=new ActiveXObject("Microsoft.XMLDOM");
+					xml.async=false;
+					xml.load(url);
+					return xml;
 				} else {  
-					alert("Загрузка XML не поддерживается браузером");  
+					alert("Загрузка XML не поддерживается браузером");
 					return null;  
 				}
 			}
@@ -337,19 +337,19 @@ var convertApp = new Vue({
 			if(window.XMLHttpRequest) {  
 				xml=new window.XMLHttpRequest();  
 				xml.open("GET", 'upload/workSpace.xml', false);  
-				xml.send("");              
-			}  
-			else  { 
+				xml.send("");
+			}
+			else  {
 				
-				if(window.ActiveXObject) {  
+				if(window.ActiveXObject) {
 					xml=new ActiveXObject("Microsoft.XMLDOM");  
-					xml.async=false;  
-					xml.load(url);   
-					return xml;   
+					xml.async=false;
+					xml.load(url);
+					return xml;
 				}  else  {  
 					alert("Загрузка XML не поддерживается браузером");  
-					return null;  
-				}  
+					return null;
+				}
 			}
 
 			xml = xml.responseXML;
@@ -402,9 +402,7 @@ var convertApp = new Vue({
 				$(".buttonDown")[0].click();
 			  }
 			});
-
 		}
-
 	}
 });
 
@@ -432,7 +430,7 @@ var tableStepOne = new Vue({
 				this.resultAjax = "Неверный тип файла";
 
 			}
-		
+
 			if (this.files) {
 
 				var data = new FormData();
@@ -449,18 +447,18 @@ var tableStepOne = new Vue({
 					processData: false, // Не обрабатываем файлы (Don't process the files)
 					contentType: false, // Так jQuery скажет серверу что это строковой запрос
 					success: function( respond, textStatus, jqXHR ){
-			 
+
 						if( typeof respond.error === 'undefined' ){
 
 							tableStepOne.resultAjax = "Успешно загружен";
 
 						}
 						else{
-							console.log('ОШИБКИ ОТВЕТА сервера: ' + respond.error );
+							console.error('ОШИБКИ ОТВЕТА сервера: ' + respond.error );
 						}
 					},
 					error: function( jqXHR, textStatus, errorThrown ){
-						console.log('ОШИБКИ AJAX запроса: ' + textStatus );
+						console.error('ОШИБКИ AJAX запроса: ' + textStatus );
 					}
 				});
 			}
