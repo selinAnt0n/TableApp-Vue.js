@@ -16,7 +16,6 @@ var strictApp = new Vue({
 			this.words.splice(index,1);
 		}
 	}
-	
 });
 
 var arrWords = strictApp.words;
@@ -41,7 +40,6 @@ var createTask = new Vue({
 				name:"Лечен",
 				flag:false
 			}
-
 		],
 		textCity:"",
 		choseCitys:[],
@@ -93,13 +91,7 @@ var createTask = new Vue({
 			
 			var test = Number.isNaN(+$(allRow[c]).text());
 
-			if (test) {
-
-				obj.push($(allRow[c]).text());
-			} else {
-
-				obj.push(+$(allRow[c]).text());
-			}
+			test ? obj.push($(allRow[c]).text()) : obj.push(+$(allRow[c]).text());
 		}
 
 		this.arr = obj;
@@ -108,7 +100,7 @@ var createTask = new Vue({
 	},
 	methods:{
 		getXMLDocument: function (url) {
-			var xml; 
+			var xml;
 
 			if(window.XMLHttpRequest)  {
 				xml = new window.XMLHttpRequest();
@@ -124,7 +116,7 @@ var createTask = new Vue({
 					xml.load(url);
 					return xml;
 				}  else  {
-					alert("Загрузка XML не поддерживается браузером");
+					console.error("Загрузка XML не поддерживается браузером");
 					return null;
 				}
 			}
@@ -187,16 +179,11 @@ var createTask = new Vue({
 			var obj = [];
 
 			for (var c = 0;c < allRow.length;c++) {
-				
+
 				var test = Number.isNaN(+$(allRow[c]).text());
 
-				if (test) {
+				test ? obj.push($(allRow[c]).text()) : obj.push(+$(allRow[c]).text());
 
-					obj.push($(allRow[c]).text());
-				} else {
-
-					obj.push(+$(allRow[c]).text());
-				}
 			}
 
 			this.arr = obj;
@@ -241,7 +228,7 @@ var createTask = new Vue({
 			});
 			this.textCity = "";
 		},
-		addNewWord: function(newWord) {      
+		addNewWord: function(newWord) {
 			this.newWords.push({ number: newWord.number });
 		},
 		removeNewWord: function(index) {
@@ -592,34 +579,25 @@ var workBox = new Vue({
 			for (var k = 0;k < count;k++) {
 				endArr[k] = 0;
 			}
-			
 			if (arr.length <= 0) {
-
 			} else {
 				endArr.unshift(arr[0][0]);
 				var str = '';
 				for (var i = 0;i < arr.length;i++) {
 					for (var j = 1; j < arr[i].length;j++) {
-
 						if (typeof arr[i][j] == typeof str){
-					
 							if ( !isNaN(parseInt(arr[i][j])) ) {
-
 								str = arr[i][j];
 								str = str.replace(/\s+/g,'');
 								str = str.replace(/,/g,'.');
 								arr[i][j] = parseFloat(str)/100;
-
 							}
 						}
-
 						endArr[j] += arr[i][j];
 					}
 				}
 				endArr.pop();
-				
 				this.viewInfo(endArr,index,item);
-
 			}
 		},
 		viewInfo: function (arr,index,item) {

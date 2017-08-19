@@ -1,4 +1,4 @@
-console.log("Welcome to Table App v.1.1   https://github.com/selinAnt0n/TableApp-Vue.js")
+console.log("Welcome to Table App v.1.1  https://github.com/selinAnt0n/TableApp-Vue.js")
 var convertApp = new Vue({
 	el:"#convertApp",
 	data: {
@@ -7,10 +7,10 @@ var convertApp = new Vue({
 		oldTime: 0,
 		timeWork:0,
 		arr:[],
+		result:[],
 		countColumn:0,
 		registNeed: false,
 		spaceNeed:false,
-		result:[],
 		widthSpan: 0,
 	},
 	methods: {
@@ -29,23 +29,23 @@ var convertApp = new Vue({
 
 			var xml;  //Создание нового файла
 
-			if(window.XMLHttpRequest) {  
-				xml=new window.XMLHttpRequest();  
-				xml.open("GET", 'upload/workSpace.xml', false);  
-				xml.send("");              
-			} 
+			if(window.XMLHttpRequest) {
+				xml=new window.XMLHttpRequest();
+				xml.open("GET", 'upload/workSpace.xml', false);
+				xml.send("");
+			}
 
-			else  { 
-				
-				if(window.ActiveXObject) {  
-					xml=new ActiveXObject("Microsoft.XMLDOM");  
-					xml.async=false;  
-					xml.load(url);   
-					return xml;   
-				}  else  {  
-					alert("Загрузка XML не поддерживается браузером");  
-					return null;  
-				}  
+			else  {
+
+				if(window.ActiveXObject) {
+					xml=new ActiveXObject("Microsoft.XMLDOM");
+					xml.async=false;
+					xml.load(url);
+					return xml;
+				}  else  {
+					alert("Загрузка XML не поддерживается браузером");
+					return null;
+				}
 			}
 
 			xml = xml.responseXML;
@@ -60,8 +60,9 @@ var convertApp = new Vue({
 					$(xmlData[i]).text('');
 
 				} else {
-					
+
 					var item = $(newXMLitem[i]).text();
+
 					$(xmlData[i]).text(item);
 
 					var strObj = xmlData[i].outerHTML;
@@ -93,7 +94,7 @@ var convertApp = new Vue({
 			  response:"text",
 			  cache:false,
 			  success: function(msg){
-			  
+			  	console.info("success");
 			  }
 			});
 		},
@@ -102,22 +103,25 @@ var convertApp = new Vue({
 			// ============================
 			// Parse XML 
 			// ============================
+
 			let globalArr = [];
 
 			let row = arrXml.length/count;
 
 			for (let i = 0;i < row;i++) {
+
 				let str = "";
-				
+
 				globalArr[i] = new Array();
+
 				for (var j = 0;j < count;j++) {
-			
+
 					globalArr[i][j] = arrXml[(i*count)+j];
 				}
 			}
 
 			this.searchName(globalArr);
-			
+
 		},
 		getXMLDocument: function () {
 
@@ -141,10 +145,10 @@ var convertApp = new Vue({
 					return xml;
 				} else {  
 					alert("Загрузка XML не поддерживается браузером");
-					return null;  
+					return null;
 				}
 			}
-			
+
 			var xml = getXML();
 
 			let allRow = xml.getElementsByTagName('Data');
@@ -207,7 +211,7 @@ var convertApp = new Vue({
 
 					} else if (this.registNeed) {
 
-						
+
 						if (!isNaN(item)) {
 
 						} else {
@@ -244,9 +248,7 @@ var convertApp = new Vue({
 
 					count++;
 
-
 				} else if (i !== 0) {
-
 
 					if (typeof resultBox[index] == "object") {
 
@@ -292,7 +294,7 @@ var convertApp = new Vue({
 							box[k] +=  +miniArr[j][k];
 
 						}
-						
+
 					}
 
 				}
@@ -334,20 +336,20 @@ var convertApp = new Vue({
 
 			var xml;  //Создание нового файла
 
-			if(window.XMLHttpRequest) {  
-				xml=new window.XMLHttpRequest();  
-				xml.open("GET", 'upload/workSpace.xml', false);  
+			if(window.XMLHttpRequest) {
+				xml=new window.XMLHttpRequest();
+				xml.open("GET", 'upload/workSpace.xml', false);
 				xml.send("");
 			}
 			else  {
 				
 				if(window.ActiveXObject) {
-					xml=new ActiveXObject("Microsoft.XMLDOM");  
+					xml=new ActiveXObject("Microsoft.XMLDOM");
 					xml.async=false;
 					xml.load(url);
 					return xml;
-				}  else  {  
-					alert("Загрузка XML не поддерживается браузером");  
+				}  else  {
+					alert("Загрузка XML не поддерживается браузером");
 					return null;
 				}
 			}
@@ -421,15 +423,20 @@ var tableStepOne = new Vue({
 
 			let name = e.srcElement.files[0].name.split(".");
 
-			if (name[1] === "xml" ) {
 
-				this.files = e.srcElement.files;
 
-			} else {
+			name[1] === "xml" ? this.files = e.srcElement.files : this.resultAjax = "Неверный тип файла";
+
+
+			// if (name[1] === "xml") {
+
+			// 	;
+
+			// } else {
 			
-				this.resultAjax = "Неверный тип файла";
+			// 	;
 
-			}
+			// }
 
 			if (this.files) {
 
@@ -485,7 +492,6 @@ var strictApp = new Vue({
 			this.words.splice(index,1);
 		}
 	}
-	
 });
 
 var arrWords = strictApp.words;
@@ -510,7 +516,6 @@ var createTask = new Vue({
 				name:"Лечен",
 				flag:false
 			}
-
 		],
 		textCity:"",
 		choseCitys:[],
@@ -562,13 +567,7 @@ var createTask = new Vue({
 			
 			var test = Number.isNaN(+$(allRow[c]).text());
 
-			if (test) {
-
-				obj.push($(allRow[c]).text());
-			} else {
-
-				obj.push(+$(allRow[c]).text());
-			}
+			test ? obj.push($(allRow[c]).text()) : obj.push(+$(allRow[c]).text());
 		}
 
 		this.arr = obj;
@@ -577,7 +576,7 @@ var createTask = new Vue({
 	},
 	methods:{
 		getXMLDocument: function (url) {
-			var xml; 
+			var xml;
 
 			if(window.XMLHttpRequest)  {
 				xml = new window.XMLHttpRequest();
@@ -593,7 +592,7 @@ var createTask = new Vue({
 					xml.load(url);
 					return xml;
 				}  else  {
-					alert("Загрузка XML не поддерживается браузером");
+					console.error("Загрузка XML не поддерживается браузером");
 					return null;
 				}
 			}
@@ -656,16 +655,11 @@ var createTask = new Vue({
 			var obj = [];
 
 			for (var c = 0;c < allRow.length;c++) {
-				
+
 				var test = Number.isNaN(+$(allRow[c]).text());
 
-				if (test) {
+				test ? obj.push($(allRow[c]).text()) : obj.push(+$(allRow[c]).text());
 
-					obj.push($(allRow[c]).text());
-				} else {
-
-					obj.push(+$(allRow[c]).text());
-				}
 			}
 
 			this.arr = obj;
@@ -710,7 +704,7 @@ var createTask = new Vue({
 			});
 			this.textCity = "";
 		},
-		addNewWord: function(newWord) {      
+		addNewWord: function(newWord) {
 			this.newWords.push({ number: newWord.number });
 		},
 		removeNewWord: function(index) {
@@ -1061,34 +1055,25 @@ var workBox = new Vue({
 			for (var k = 0;k < count;k++) {
 				endArr[k] = 0;
 			}
-			
 			if (arr.length <= 0) {
-
 			} else {
 				endArr.unshift(arr[0][0]);
 				var str = '';
 				for (var i = 0;i < arr.length;i++) {
 					for (var j = 1; j < arr[i].length;j++) {
-
 						if (typeof arr[i][j] == typeof str){
-					
 							if ( !isNaN(parseInt(arr[i][j])) ) {
-
 								str = arr[i][j];
 								str = str.replace(/\s+/g,'');
 								str = str.replace(/,/g,'.');
 								arr[i][j] = parseFloat(str)/100;
-
 							}
 						}
-
 						endArr[j] += arr[i][j];
 					}
 				}
 				endArr.pop();
-				
 				this.viewInfo(endArr,index,item);
-
 			}
 		},
 		viewInfo: function (arr,index,item) {
