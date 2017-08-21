@@ -496,7 +496,6 @@ var strictApp = new Vue({
 
 var arrWords = strictApp.words;
 
-
 var createTask = new Vue({
 			// ============================
 			// Create tast APP
@@ -526,18 +525,15 @@ var createTask = new Vue({
 					"лечен",
 					"вар",
 					"тур"
-
 				],
 				flag:false,
 				visible:false
 			},
-
 		],
 		newWords: [
 			{
 				text:"",
 			},
-		
 		],
 		choseTemps:[],
 		wordTemp:"",
@@ -605,7 +601,7 @@ var createTask = new Vue({
 			for (var i = 0;i < row;i++) {
 
 				var str = "";
-				
+
 				globalArr[i] = new Array();
 
 				for (var j = 0;j < count;j++) {
@@ -613,6 +609,7 @@ var createTask = new Vue({
 					globalArr[i][j] = arrXml[(i*count)+j];
 
 				}
+
 			}
 
 			this.arr = [];
@@ -694,6 +691,7 @@ var createTask = new Vue({
 					if (this.choseTemps[i] == temp) {
 						this.choseTemps.splice(i,1);
 					}
+
 				}
 			}
 		},
@@ -773,7 +771,7 @@ var workBox = new Vue({
 				this.messege = "";
 
 				for (var j =0;j < arr.length;j++) {
-					
+
 					result.push(arr[j].data );
 
 				}
@@ -844,6 +842,7 @@ var workBox = new Vue({
 					this.words.push(dataItem);
 
 				}
+
 			} else {
 
 				this.messege = "Выберите Город/Шаблон";
@@ -851,8 +850,9 @@ var workBox = new Vue({
 			}
 		},
 		useStrict: function (item,index) {
-			
+
 			item.strictFlag = !item.strictFlag;
+
 		},
 		startSearch: function (item,index) {
 
