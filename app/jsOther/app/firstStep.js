@@ -121,7 +121,6 @@ var convertApp = new Vue({
 			}
 
 			this.searchName(globalArr);
-
 		},
 		getXMLDocument: function () {
 
@@ -263,7 +262,6 @@ var convertApp = new Vue({
 			}
 
 			this.MathArr( resultBox );
-
 		},
 		MathArr: function (arr) {
 
@@ -326,7 +324,6 @@ var convertApp = new Vue({
 			this.widthSpan = 100/this.result[0].length;
 
 			this.procentNew = 100 - ((this.result.length / this.countRowOld ) * 100);
-
 		},
 		createFile: function () {
 
@@ -408,6 +405,12 @@ var convertApp = new Vue({
 	}
 });
 
+
+
+
+
+
+
 var tableStepOne = new Vue({
 	el:"#uploadFile",
 	data: {
@@ -469,7 +472,9 @@ var tableStepOne = new Vue({
 					}
 				});
 			}
-			
+
+
+
 		},
 	}
 });
