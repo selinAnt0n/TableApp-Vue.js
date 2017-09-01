@@ -121,7 +121,6 @@ var convertApp = new Vue({
 			}
 
 			this.searchName(globalArr);
-
 		},
 		getXMLDocument: function () {
 
@@ -263,7 +262,6 @@ var convertApp = new Vue({
 			}
 
 			this.MathArr( resultBox );
-
 		},
 		MathArr: function (arr) {
 
@@ -326,7 +324,6 @@ var convertApp = new Vue({
 			this.widthSpan = 100/this.result[0].length;
 
 			this.procentNew = 100 - ((this.result.length / this.countRowOld ) * 100);
-
 		},
 		createFile: function () {
 
@@ -469,10 +466,20 @@ var tableStepOne = new Vue({
 					}
 				});
 			}
-			
+
+
+
 		},
 	}
 });
+
+
+
+
+
+
+
+
 
 var strictApp = new Vue({ 
 			// ============================

@@ -405,12 +405,6 @@ var convertApp = new Vue({
 	}
 });
 
-
-
-
-
-
-
 var tableStepOne = new Vue({
 	el:"#uploadFile",
 	data: {
@@ -472,9 +466,14 @@ var tableStepOne = new Vue({
 					}
 				});
 			}
-
-
-
 		},
 	}
 });
+
+
+
+
+
+
+
+
