@@ -442,6 +442,8 @@ var tableStepOne = new Vue({
 					data.append( key, value );
 				});
 
+				console.log(data);
+
 				$.ajax({
 					url: './submit.php?uploadfiles',
 					type: 'POST',

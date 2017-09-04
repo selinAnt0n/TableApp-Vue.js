@@ -440,7 +440,11 @@ var tableStepOne = new Vue({
 				var data = new FormData();
 				$.each( this.files, function( key, value ){
 					data.append( key, value );
+
+					console.log(  key, value );
 				});
+
+				// console.log(data);
 
 				$.ajax({
 					url: './submit.php?uploadfiles',
@@ -465,10 +469,9 @@ var tableStepOne = new Vue({
 						console.error('ОШИБКИ AJAX запроса: ' + textStatus );
 					}
 				});
+
+				console.log(data);
 			}
-
-
-
 		},
 	}
 });
